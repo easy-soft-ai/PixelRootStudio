@@ -10,6 +10,7 @@ const sqlite = new Database(DB_PATH);
 sqlite.pragma("journal_mode = WAL");
 runMigrations(sqlite);
 
+export { DB_PATH, sqlite };
 export const db = drizzle(sqlite, { schema });
 
 export * from "./schema";

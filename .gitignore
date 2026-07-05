@@ -39,3 +39,20 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local database backups (auto-saved before restore)
+/data/backups/
+
+# runtime database (managed via admin backup/restore, not git)
+/data/*.db
+/data/*.db-shm
+/data/*.db-wal
+/data/*.db.bak*
+/data/*.db.corrupt*
+/data/*.db-shm.bak
+/data/*.db-wal.bak
+/data/*.db-shm.corrupt*
+/data/*.db-wal.corrupt*
+
+# user-uploaded media (managed via admin backup/restore, not git)
+/public/uploads/

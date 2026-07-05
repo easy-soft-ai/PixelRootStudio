@@ -4,6 +4,7 @@ import Script from "next/script";
 import "./globals.css";
 import { AppShell } from "@/components/app-shell";
 import { ChromeGate } from "@/components/chrome-gate";
+import { DynamicFavicon } from "@/components/dynamic-favicon";
 import { SiteFooter } from "@/components/site-footer";
 import { getSiteSeo } from "@/seo/site-seo";
 
@@ -19,6 +20,8 @@ const playfair = Playfair_Display({
   display: "swap",
 });
 
+export const revalidate = 3600;
+
 export async function generateMetadata(): Promise<Metadata> {
   const siteSeo = getSiteSeo();
   const ogImages = siteSeo.ogImage
@@ -31,13 +34,6 @@ export async function generateMetadata(): Promise<Metadata> {
     description: siteSeo.description,
     keywords: siteSeo.keywords,
     applicationName: siteSeo.siteName,
-    icons: siteSeo.favicon
-      ? {
-          icon: siteSeo.favicon,
-          shortcut: siteSeo.favicon,
-          apple: siteSeo.favicon,
-        }
-      : undefined,
     alternates: {
       canonical: "/",
     },
@@ -85,6 +81,7 @@ export default function RootLayout({
       className={`${inter.variable} ${playfair.variable}`}
     >
       <head>
+        <DynamicFavicon />
         <link rel="preconnect" href="https://images.unsplash.com" />
         <link rel="dns-prefetch" href="https://images.unsplash.com" />
       </head>
