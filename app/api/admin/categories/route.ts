@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { getSession } from "@/lib/auth";
-import { db, categories } from "@/lib/db";
+import { db, categories, galleryItems, projects } from "@/lib/db";
 import { getCategories } from "@/lib/db/queries";
 import { eq } from "drizzle-orm";
 import { revalidatePath } from "next/cache";
@@ -107,7 +107,21 @@ export async function DELETE(request: Request) {
       return NextResponse.json({ error: "ID is required" }, { status: 400 });
     }
     
-    db.delete(categories).where(eq(categories.id, parseInt(id))).run();
+    const categoryId = parseInt(id);
+    
+    // Detach referencing rows so they become uncategorized instead of
+    // blocking the delete with a FOREIGN KEY constraint failure.
+    db.transaction((tx) => {
+      tx.update(galleryItems)
+        .set({ categoryId: null })
+        .where(eq(galleryItems.categoryId, categoryId))
+        .run();
+      tx.update(projects)
+        .set({ categoryId: null })
+        .where(eq(projects.categoryId, categoryId))
+        .run();
+      tx.delete(categories).where(eq(categories.id, categoryId)).run();
+    });
     
     revalidatePath("/");
     revalidatePath("/portfolio");

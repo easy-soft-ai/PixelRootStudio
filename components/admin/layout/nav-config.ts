@@ -134,12 +134,7 @@ export const adminNavGroups: NavGroup[] = [
   {
     title: "Settings",
     items: [
-      {
-        href: "/admin/backup",
-        label: "Backup & Restore",
-        icon: "backup",
-        description: "Database SQL export and image backup",
-      },
+      
       {
         href: "/admin/performance",
         label: "Site Health",
@@ -151,6 +146,12 @@ export const adminNavGroups: NavGroup[] = [
         label: "Site Settings",
         icon: "seo",
         description: "Logo, favicon, SEO, social meta",
+      },
+      {
+        href: "/admin/backup",
+        label: "Backup & Restore",
+        icon: "backup",
+        description: "Database SQL export and image backup",
       },
     ],
   },
