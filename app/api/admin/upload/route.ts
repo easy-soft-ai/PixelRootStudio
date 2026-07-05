@@ -5,7 +5,7 @@ import { existsSync } from "fs";
 import path from "path";
 
 const ALLOWED_TYPES = ["image/jpeg", "image/png", "image/webp", "image/gif"];
-const MAX_SIZE = 10 * 1024 * 1024; // 10MB
+const MAX_SIZE = 5 * 1024 * 1024; // 5MB
 
 function sanitizeFilename(filename: string): string {
   return filename

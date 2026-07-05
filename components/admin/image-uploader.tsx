@@ -189,7 +189,7 @@ export function ImageUploader({
                     <p className="text-sm text-white/80">
                       <span className="text-amber-400 font-medium">Click to upload</span> or drag and drop
                     </p>
-                    <p className="text-xs text-white/40 mt-1">PNG, JPG, WebP up to 10MB</p>
+                    <p className="text-xs text-white/40 mt-1">PNG, JPG, WebP up to 5MB</p>
                   </div>
                 </>
               )}
