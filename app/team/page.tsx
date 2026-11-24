@@ -5,9 +5,9 @@ import { TeamSection } from "@/components/about/team-section";
 import { getTeamMembers } from "@/lib/db/queries";
 
 export const metadata: Metadata = {
-  title: "Our Team — PixelRoot Studio",
+  title: "Our Team | PixelRoot Studio",
   description:
-    "Meet the creative team at PixelRoot Studio — photographers, videographers, and visual storytellers dedicated to uncompromising quality.",
+    "Meet the PixelRoot Studio team: photographers and filmmakers.",
   alternates: { canonical: "/team" },
 };
 

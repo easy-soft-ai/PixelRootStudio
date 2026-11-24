@@ -79,7 +79,7 @@ export function runSiteHealthAudit(): SiteHealthReport {
     message: !settings?.metaTitle?.trim()
       ? "Add a meta title in Site Settings"
       : settings.metaTitle.length < 30
-        ? "Meta title is short — aim for 50–60 characters"
+        ? "Meta title is short. Aim for 50–60 characters."
         : settings.metaTitle.length > 70
           ? "Meta title may be truncated in search results"
           : "Meta title is set and well-sized",
@@ -99,7 +99,7 @@ export function runSiteHealthAudit(): SiteHealthReport {
     message: !settings?.metaDescription?.trim()
       ? "Add a meta description for search snippets"
       : settings.metaDescription.length < 80
-        ? "Description is short — aim for 120–160 characters"
+        ? "Description is short. Aim for 120–160 characters."
         : settings.metaDescription.length > 170
           ? "Description may be truncated in Google"
           : "Meta description is optimized",
@@ -224,7 +224,7 @@ export function runSiteHealthAudit(): SiteHealthReport {
     label: "Homepage caching (ISR)",
     category: "performance",
     status: "pass",
-    message: "Landing page uses ISR (revalidate 3600s) — fast static delivery with CMS updates",
+    message: "Landing page uses ISR (revalidate 3600s). Static delivery stays fast, and CMS updates still publish.",
     weight: 12,
   });
 
@@ -251,7 +251,7 @@ export function runSiteHealthAudit(): SiteHealthReport {
     label: "Font loading strategy",
     category: "performance",
     status: "pass",
-    message: "Google fonts use display: swap — no render-blocking fonts",
+    message: "Google fonts use display: swap, so they do not block rendering.",
     weight: 8,
   });
 
@@ -275,7 +275,7 @@ export function runSiteHealthAudit(): SiteHealthReport {
     category: "performance",
     status: heroUsesRemote ? "warn" : hero?.image?.src ? "pass" : "fail",
     message: heroUsesRemote
-      ? "Hero uses external Unsplash URL — upload a local image for faster LCP"
+      ? "Hero uses an external Unsplash URL. Upload a local image for a faster first paint."
       : hero?.image?.src
         ? "Hero image is locally hosted or optimized"
         : "Hero image is missing",
@@ -288,7 +288,7 @@ export function runSiteHealthAudit(): SiteHealthReport {
     label: "X-Powered-By header",
     category: "performance",
     status: "pass",
-    message: "Powered-by header disabled — reduced fingerprinting",
+    message: "Powered-by header is disabled, which reduces fingerprinting.",
     weight: 4,
   });
 
@@ -328,7 +328,7 @@ export function runSiteHealthAudit(): SiteHealthReport {
         ? `${categories.length} featured categories on homepage`
         : categories.length > 0
           ? "Add at least 3 featured categories"
-          : "No featured categories — homepage slider will be empty",
+          : "No featured categories. The homepage slider will be empty.",
     fixHref: "/admin/categories",
     weight: 10,
   });
@@ -358,7 +358,7 @@ export function runSiteHealthAudit(): SiteHealthReport {
         ? `${packages.length} popular package(s) on homepage`
         : activePackages.length > 0
           ? "Mark at least one package as popular for homepage preview"
-          : "No active packages — add packages for conversions",
+          : "No active packages. Add packages so people can book.",
     fixHref: "/admin/packages",
     weight: 10,
   });
@@ -386,7 +386,7 @@ export function runSiteHealthAudit(): SiteHealthReport {
         ? `${projectSlugs.length} portfolio projects live`
         : projectSlugs.length > 0
           ? "Add more portfolio projects (aim for 3+)"
-          : "No portfolio projects — critical for a photography site",
+          : "No portfolio projects. A photography site needs them.",
     fixHref: "/admin/projects",
     weight: 10,
   });

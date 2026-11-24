@@ -3,7 +3,7 @@ import { PortfolioGrid } from "@/components/portfolio/portfolio-grid";
 import { getProjects, getPortfolioCategories } from "@/lib/db/queries";
 
 export const metadata: Metadata = {
-  title: "Portfolio — PixelRoot Studio",
+  title: "Portfolio | PixelRoot Studio",
   description:
     "Browse our portfolio of professional photography projects. Fashion, weddings, corporate events, commercial product photography, and cinematic video coverage.",
   alternates: { canonical: "/portfolio" },
@@ -31,7 +31,7 @@ export default async function PortfolioPage({
             Portfolio
           </h1>
           <p className="mt-3 text-sm text-[color:var(--muted)] max-w-lg leading-relaxed">
-            Explore our collection of professional photography and cinematic video projects — each crafted with precision, artistry, and uncompromising quality.
+            Photography and film projects, shot and edited with care.
           </p>
         </div>
 

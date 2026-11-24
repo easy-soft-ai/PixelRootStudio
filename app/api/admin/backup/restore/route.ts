@@ -64,7 +64,7 @@ export async function POST(request: Request) {
 
     return NextResponse.json({
       success: true,
-      message: "Backup restored — database and uploaded files were replaced.",
+      message: "Backup restored. The database and uploaded files were replaced.",
       snapshotPath,
     });
   } catch (error) {

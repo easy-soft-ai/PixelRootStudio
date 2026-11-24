@@ -70,7 +70,7 @@ export default function Home() {
 
       <CtaBanner
         headline="Ready to Book Your Session?"
-        subtext="Premium equipment, cinematic expertise, and a dedicated team — all at your service."
+        subtext="Good equipment, a careful team, and time to do the job properly."
         ctaLabel="Book Your Session"
         ctaHref="/packages"
         variant="light"

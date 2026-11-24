@@ -17,7 +17,7 @@ function buildBookingMessage(lead: { service: string | null; message: string }) 
   const parts: string[] = [];
   if (lead.service) parts.push(`Service interest: ${lead.service}`);
   parts.push(lead.message);
-  parts.push("\n— Converted from contact form lead");
+  parts.push("\nConverted from contact form lead");
   return parts.join("\n\n");
 }
 
