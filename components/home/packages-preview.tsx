@@ -59,7 +59,7 @@ export function PackagesPreview({ title, subtitle, ctaLabel, ctaHref, packages }
           className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-5 mb-10 sm:mb-14"
         >
           <div>
-            <span className="block text-[11px] font-semibold tracking-[0.2em] uppercase text-amber-500 mb-2">
+            <span className="block text-[11px] font-semibold tracking-[0.2em] uppercase text-[color:var(--primary)] mb-2">
               Investment
             </span>
             <h2 className="hero-headline text-[1.9rem] sm:text-[2.4rem] font-bold text-[color:var(--text)] leading-tight tracking-[-0.02em]">
@@ -96,13 +96,13 @@ export function PackagesPreview({ title, subtitle, ctaLabel, ctaHref, packages }
                 href={`/packages/${pkg.slug}`}
                 className={`group relative block rounded-2xl border overflow-hidden ${
                   pkg.popular
-                    ? "border-amber-500/30"
+                    ? "border-[color:var(--primary)]/30"
                     : "border-[color:var(--border)]"
-                } bg-[color:var(--surface)] hover:border-amber-500/30 transition-colors duration-300`}
+                } bg-[color:var(--surface)] hover:border-[color:var(--primary)]/30 transition-colors duration-300`}
               >
                 {pkg.popular && (
                   <div className="absolute top-4 right-4 z-10">
-                    <span className="inline-flex items-center gap-1.5 text-[9px] font-bold tracking-[0.15em] uppercase bg-amber-500 text-black px-2.5 py-1 rounded-full">
+                    <span className="inline-flex items-center gap-1.5 text-[9px] font-bold tracking-[0.15em] uppercase bg-[color:var(--primary)] text-white px-2.5 py-1 rounded-full">
                       Popular
                     </span>
                   </div>
@@ -127,7 +127,7 @@ export function PackagesPreview({ title, subtitle, ctaLabel, ctaHref, packages }
                     {categoryLabels[pkg.category] || pkg.category}
                   </span>
 
-                  <h3 className="hero-headline text-lg sm:text-xl font-bold text-[color:var(--text)] leading-tight mb-1.5 group-hover:text-amber-500 transition-colors duration-200">
+                  <h3 className="hero-headline text-lg sm:text-xl font-bold text-[color:var(--text)] leading-tight mb-1.5 group-hover:text-[color:var(--primary)] transition-colors duration-200">
                     {pkg.name}
                   </h3>
 
@@ -161,7 +161,7 @@ export function PackagesPreview({ title, subtitle, ctaLabel, ctaHref, packages }
                   <ul className="space-y-1.5 mb-5">
                     {pkg.features.slice(0, 4).map((feature: string, fi: number) => (
                       <li key={fi} className="flex items-start gap-2 text-xs text-[color:var(--text)]">
-                        <span className="mt-1 w-1 h-1 rounded-full bg-amber-500 shrink-0" />
+                        <span className="mt-1 w-1 h-1 rounded-full bg-[color:var(--primary)] shrink-0" />
                         {feature}
                       </li>
                     ))}
@@ -175,8 +175,8 @@ export function PackagesPreview({ title, subtitle, ctaLabel, ctaHref, packages }
                   {/* CTA */}
                   <div className={`flex items-center justify-center py-2.5 rounded-full text-sm font-semibold transition-all duration-200 ${
                     pkg.popular
-                      ? "bg-amber-500 text-black group-hover:bg-amber-400"
-                      : "bg-[color:var(--bg)] border border-[color:var(--border)] text-[color:var(--text)] group-hover:border-amber-500/50 group-hover:text-amber-500"
+                      ? "bg-[color:var(--primary)] text-white group-hover:brightness-110"
+                      : "bg-[color:var(--bg)] border border-[color:var(--border)] text-[color:var(--text)] group-hover:border-[color:var(--primary)]/50 group-hover:text-[color:var(--primary)]"
                   }`}>
                     Book Now
                   </div>

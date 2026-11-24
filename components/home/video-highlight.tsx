@@ -102,10 +102,10 @@ export function VideoHighlight({
               >
                 <div className="relative">
                   {/* Pulse ring */}
-                  <div className="absolute inset-0 rounded-full bg-amber-500/30 animate-ping" style={{ animationDuration: "2s" }} />
+                  <div className="absolute inset-0 rounded-full bg-[color:var(--primary)]/30 animate-ping" style={{ animationDuration: "2s" }} />
                   
                   {/* Button */}
-                  <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-amber-500 flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform duration-300">
+                  <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-[color:var(--primary)] flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform duration-300">
                     <svg 
                       viewBox="0 0 24 24" 
                       className="w-8 h-8 sm:w-10 sm:h-10 text-white ml-1" 

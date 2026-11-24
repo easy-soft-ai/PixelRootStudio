@@ -63,8 +63,8 @@ export function BookingForm({ packageId, packageName, onSuccess }: Props) {
         transition={{ duration: 0.4, ease: easeOut }}
         className="text-center py-10"
       >
-        <div className="w-14 h-14 mx-auto mb-4 rounded-full bg-amber-500/10 border border-amber-500/20 flex items-center justify-center">
-          <svg className="w-7 h-7 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+        <div className="w-14 h-14 mx-auto mb-4 rounded-full bg-[color:var(--primary)]/10 border border-[color:var(--primary)]/20 flex items-center justify-center">
+          <svg className="w-7 h-7 text-[color:var(--primary)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
           </svg>
         </div>
@@ -76,7 +76,7 @@ export function BookingForm({ packageId, packageName, onSuccess }: Props) {
         </p>
         <button
           onClick={() => setSuccess(false)}
-          className="mt-5 text-xs font-semibold text-amber-500 hover:text-amber-400 transition-colors"
+          className="mt-5 text-xs font-semibold text-[color:var(--primary)] hover:text-[color:var(--primary)] transition-colors"
         >
           Submit another request
         </button>
@@ -84,13 +84,13 @@ export function BookingForm({ packageId, packageName, onSuccess }: Props) {
     );
   }
 
-  const inputClass = "w-full px-3.5 py-2.5 rounded-lg border border-[color:var(--border)] bg-[color:var(--bg)] text-sm text-[color:var(--text)] placeholder:text-[color:var(--muted)]/60 focus:ring-1 focus:ring-amber-500/30 focus:border-amber-500/50 outline-none transition-all duration-200";
+  const inputClass = "w-full px-3.5 py-2.5 rounded-lg border border-[color:var(--border)] bg-[color:var(--bg)] text-sm text-[color:var(--text)] placeholder:text-[color:var(--muted)]/60 focus:ring-1 focus:ring-[color:var(--primary)]/30 focus:border-[color:var(--primary)]/50 outline-none transition-all duration-200";
 
   return (
     <form onSubmit={handleSubmit} className="space-y-3.5">
       {packageName && packageName !== "Custom Inquiry" && (
-        <div className="bg-amber-500/5 border border-amber-500/15 rounded-lg px-3.5 py-2.5">
-          <p className="text-[10px] font-semibold tracking-[0.1em] uppercase text-amber-500/70">Selected Package</p>
+        <div className="bg-[color:var(--primary)]/5 border border-[color:var(--primary)]/15 rounded-lg px-3.5 py-2.5">
+          <p className="text-[10px] font-semibold tracking-[0.1em] uppercase text-[color:var(--primary)]/70">Selected Package</p>
           <p className="text-sm font-semibold text-[color:var(--text)]">{packageName}</p>
         </div>
       )}
@@ -189,7 +189,7 @@ export function BookingForm({ packageId, packageName, onSuccess }: Props) {
       <button
         type="submit"
         disabled={loading}
-        className="w-full py-3 rounded-full bg-amber-500 text-black text-sm font-semibold hover:bg-amber-400 disabled:opacity-50 transition-colors duration-200"
+        className="w-full py-3 rounded-full bg-[color:var(--primary)] text-white text-sm font-semibold hover:opacity-90 disabled:opacity-50 transition-colors duration-200"
       >
         {loading ? "Submitting..." : "Book Now"}
       </button>

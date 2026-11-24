@@ -1,6 +1,5 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
-import Script from "next/script";
 import "./globals.css";
 import { AppShell } from "@/components/app-shell";
 import { ChromeGate } from "@/components/chrome-gate";
@@ -21,6 +20,11 @@ const playfair = Playfair_Display({
 });
 
 export const revalidate = 3600;
+
+export const viewport: Viewport = {
+  colorScheme: "dark",
+  themeColor: "#0f1115",
+};
 
 export async function generateMetadata(): Promise<Metadata> {
   const siteSeo = getSiteSeo();
@@ -77,7 +81,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      suppressHydrationWarning
+      data-theme="dark"
       className={`${inter.variable} ${playfair.variable}`}
     >
       <head>
@@ -86,13 +90,6 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://images.unsplash.com" />
       </head>
       <body>
-        <Script
-          id="theme-initializer"
-          strategy="beforeInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `(function(){try{var t=localStorage.getItem("theme");var p=window.matchMedia("(prefers-color-scheme: dark)").matches;var n=(t==="light"||t==="dark")?t:(p?"dark":"light");document.documentElement.setAttribute("data-theme",n);}catch(e){}})();`,
-          }}
-        />
         <AppShell>
           <main className="site-main">{children}</main>
           <ChromeGate>

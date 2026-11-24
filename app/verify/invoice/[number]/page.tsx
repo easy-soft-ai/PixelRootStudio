@@ -4,7 +4,7 @@ import { getInvoiceByNumber } from "@/lib/invoices/queries";
 import { formatMoney } from "@/lib/invoices/calculations";
 
 export const metadata: Metadata = {
-  title: "Verify Invoice — PixelRoot Studio",
+  title: "Verify Invoice | PixelRoot Studio",
   robots: { index: false, follow: false },
 };
 
@@ -46,7 +46,7 @@ export default async function VerifyInvoicePage({
             <dl className="rounded-xl border border-white/10 bg-black/20 text-left text-sm divide-y divide-white/5">
               <div className="flex justify-between gap-4 px-4 py-3">
                 <dt className="text-white/50">Invoice number</dt>
-                <dd className="font-mono font-semibold text-amber-400">{invoice.invoiceNumber}</dd>
+                <dd className="font-mono font-semibold text-[color:var(--primary)]">{invoice.invoiceNumber}</dd>
               </div>
               <div className="flex justify-between gap-4 px-4 py-3">
                 <dt className="text-white/50">Issue date</dt>

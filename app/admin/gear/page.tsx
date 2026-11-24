@@ -117,7 +117,7 @@ export default function AdminGearPage() {
             });
             setIsNew(true);
           }}
-          className="px-5 py-2.5 bg-amber-500 hover:bg-amber-400 text-slate-900 font-semibold rounded-lg transition-colors"
+          className="px-5 py-2.5 bg-[color:var(--primary)] hover:opacity-90 text-white font-semibold rounded-lg transition-colors"
         >
           Add Gear
         </button>
@@ -158,7 +158,7 @@ export default function AdminGearPage() {
           <button
             onClick={handleSaveSettings}
             disabled={saving}
-            className="px-4 py-2 bg-amber-500 hover:bg-amber-400 text-slate-900 font-semibold rounded-lg text-sm"
+            className="px-4 py-2 bg-[color:var(--primary)] hover:opacity-90 text-white font-semibold rounded-lg text-sm"
           >
             {saving ? "Saving..." : "Save Settings"}
           </button>
@@ -234,7 +234,7 @@ export default function AdminGearPage() {
               <button
                 onClick={handleSaveItem}
                 disabled={saving || !editing.name}
-                className="px-4 py-2 bg-amber-500 hover:bg-amber-400 disabled:bg-amber-500/50 text-slate-900 font-semibold rounded-lg text-sm"
+                className="px-4 py-2 bg-[color:var(--primary)] hover:opacity-90 disabled:bg-[color:var(--primary)]/50 text-white font-semibold rounded-lg text-sm"
               >
                 {saving ? "Saving..." : "Save"}
               </button>
@@ -254,7 +254,7 @@ export default function AdminGearPage() {
             <div
               key={item.id}
               className={`group relative bg-white/5 border border-white/10 rounded-xl overflow-hidden ${
-                item.featured ? "ring-2 ring-amber-500/50" : ""
+                item.featured ? "ring-2 ring-[color:var(--primary)]/50" : ""
               }`}
             >
               {item.imageSrc ? (
@@ -272,7 +272,7 @@ export default function AdminGearPage() {
               {/* Featured Badge */}
               {item.featured && (
                 <div className="absolute top-2 left-2">
-                  <span className="text-[9px] font-bold tracking-wider uppercase text-amber-400 bg-black/70 px-2 py-1 rounded">
+                  <span className="text-[9px] font-bold tracking-wider uppercase text-[color:var(--primary)] bg-black/70 px-2 py-1 rounded">
                     Featured
                   </span>
                 </div>
@@ -282,7 +282,7 @@ export default function AdminGearPage() {
               <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2">
                 <button
                   onClick={() => { setEditing(item); setIsNew(false); }}
-                  className="px-3 py-1.5 bg-amber-500 text-slate-900 text-xs font-semibold rounded-lg"
+                  className="px-3 py-1.5 bg-[color:var(--primary)] text-white text-xs font-semibold rounded-lg"
                 >
                   Edit
                 </button>
@@ -296,7 +296,7 @@ export default function AdminGearPage() {
 
               {/* Info */}
               <div className="p-3">
-                <span className="text-[9px] font-semibold tracking-wider uppercase text-amber-400/70">
+                <span className="text-[9px] font-semibold tracking-wider uppercase text-[color:var(--primary)]/70">
                   {item.category}
                 </span>
                 <p className="text-sm font-medium text-white truncate">{item.name}</p>

@@ -142,7 +142,7 @@ export default function AdminBackupPage() {
           type="button"
           onClick={handleDownload}
           disabled={downloading}
-          className="w-full sm:w-auto px-5 py-2.5 bg-amber-500 hover:bg-amber-400 disabled:bg-amber-500/50 text-slate-900 font-semibold rounded-lg transition-colors"
+          className="w-full sm:w-auto px-5 py-2.5 bg-[color:var(--primary)] hover:opacity-90 disabled:bg-[color:var(--primary)]/50 text-white font-semibold rounded-lg transition-colors"
         >
           {downloading ? "Preparing…" : "Download Backup (ZIP)"}
         </button>

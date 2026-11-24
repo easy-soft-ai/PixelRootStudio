@@ -156,7 +156,7 @@ export default function AdminPackagesPage() {
             });
             setIsNew(true);
           }}
-          className="px-5 py-2.5 bg-amber-500 hover:bg-amber-400 text-slate-900 font-semibold rounded-lg transition-colors"
+          className="px-5 py-2.5 bg-[color:var(--primary)] hover:opacity-90 text-white font-semibold rounded-lg transition-colors"
         >
           Add Package
         </button>
@@ -204,7 +204,7 @@ export default function AdminPackagesPage() {
           <button
             onClick={handleSaveSettings}
             disabled={saving}
-            className="px-4 py-2 bg-amber-500 hover:bg-amber-400 text-slate-900 font-semibold rounded-lg text-sm"
+            className="px-4 py-2 bg-[color:var(--primary)] hover:opacity-90 text-white font-semibold rounded-lg text-sm"
           >
             {saving ? "Saving..." : "Save Settings"}
           </button>
@@ -228,7 +228,7 @@ export default function AdminPackagesPage() {
                   <div className="flex items-center gap-2">
                     <h3 className="text-sm font-medium text-white truncate">{item.name}</h3>
                     {item.popular && (
-                      <span className="text-[9px] font-bold tracking-wider uppercase text-amber-400 bg-amber-400/10 px-2 py-0.5 rounded">Popular</span>
+                      <span className="text-[9px] font-bold tracking-wider uppercase text-[color:var(--primary)] bg-[color:var(--primary)]/10 px-2 py-0.5 rounded">Popular</span>
                     )}
                     {!item.active && (
                       <span className="text-[9px] font-bold tracking-wider uppercase text-red-400 bg-red-400/10 px-2 py-0.5 rounded">Inactive</span>
@@ -241,7 +241,7 @@ export default function AdminPackagesPage() {
                 <div className="flex gap-2 ml-4">
                   <button
                     onClick={() => { setEditing(item); setIsNew(false); }}
-                    className="px-3 py-1.5 text-xs text-amber-400 border border-amber-400/30 rounded-lg hover:bg-amber-400/10 transition-colors"
+                    className="px-3 py-1.5 text-xs text-[color:var(--primary)] border border-[color:var(--primary)]/30 rounded-lg hover:opacity-90/10 transition-colors"
                   >
                     Edit
                   </button>
@@ -477,7 +477,7 @@ export default function AdminPackagesPage() {
               <button
                 onClick={handleSaveItem}
                 disabled={saving || !editing.name || !editing.slug}
-                className="px-4 py-2 bg-amber-500 hover:bg-amber-400 disabled:bg-amber-500/50 text-slate-900 font-semibold rounded-lg text-sm"
+                className="px-4 py-2 bg-[color:var(--primary)] hover:opacity-90 disabled:bg-[color:var(--primary)]/50 text-white font-semibold rounded-lg text-sm"
               >
                 {saving ? "Saving..." : isNew ? "Create Package" : "Save Changes"}
               </button>

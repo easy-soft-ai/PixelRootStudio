@@ -101,7 +101,7 @@ export function PortfolioGrid({
                   {/* Category pill */}
                   <div className="absolute top-3 left-3">
                     <span className="inline-flex items-center gap-1.5 text-[9px] font-semibold tracking-[0.14em] uppercase text-white bg-black/50 backdrop-blur-sm border border-white/15 rounded-full px-3 py-1">
-                      <span className="w-1 h-1 rounded-full bg-amber-400 shrink-0" />
+                      <span className="w-1 h-1 rounded-full bg-[color:var(--primary)] shrink-0" />
                       {project.category?.name || "Uncategorized"}
                     </span>
                   </div>

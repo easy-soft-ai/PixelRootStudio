@@ -89,7 +89,7 @@ export default function AdminHeroPage() {
         <button
           onClick={handleSave}
           disabled={saving}
-          className="px-5 py-2.5 bg-amber-500 hover:bg-amber-400 disabled:bg-amber-500/50 text-slate-900 font-semibold rounded-lg transition-colors"
+          className="px-5 py-2.5 bg-[color:var(--primary)] hover:opacity-90 disabled:bg-[color:var(--primary)]/50 text-white font-semibold rounded-lg transition-colors"
         >
           {saving ? "Saving..." : "Save Changes"}
         </button>
@@ -111,7 +111,7 @@ export default function AdminHeroPage() {
             type="text"
             value={data.badge}
             onChange={(e) => setData({ ...data, badge: e.target.value })}
-            className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-amber-500/50"
+            className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-[color:var(--primary)]/50"
           />
         </div>
 
@@ -124,7 +124,7 @@ export default function AdminHeroPage() {
             value={data.headline.join("\n")}
             onChange={(e) => setData({ ...data, headline: e.target.value.split("\n") })}
             rows={3}
-            className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-amber-500/50"
+            className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-[color:var(--primary)]/50"
           />
         </div>
 
@@ -137,7 +137,7 @@ export default function AdminHeroPage() {
             value={data.subheadline}
             onChange={(e) => setData({ ...data, subheadline: e.target.value })}
             rows={2}
-            className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-amber-500/50"
+            className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-[color:var(--primary)]/50"
           />
         </div>
 
@@ -153,7 +153,7 @@ export default function AdminHeroPage() {
                 type="text"
                 value={data.cta.primary.label}
                 onChange={(e) => setData({ ...data, cta: { ...data.cta, primary: { ...data.cta.primary, label: e.target.value } } })}
-                className="w-full px-3 py-2 bg-white/5 border border-white/10 rounded-lg text-white text-sm focus:outline-none focus:ring-2 focus:ring-amber-500/50"
+                className="w-full px-3 py-2 bg-white/5 border border-white/10 rounded-lg text-white text-sm focus:outline-none focus:ring-2 focus:ring-[color:var(--primary)]/50"
               />
             </div>
             <div>
@@ -162,7 +162,7 @@ export default function AdminHeroPage() {
                 type="text"
                 value={data.cta.primary.href}
                 onChange={(e) => setData({ ...data, cta: { ...data.cta, primary: { ...data.cta.primary, href: e.target.value } } })}
-                className="w-full px-3 py-2 bg-white/5 border border-white/10 rounded-lg text-white text-sm focus:outline-none focus:ring-2 focus:ring-amber-500/50"
+                className="w-full px-3 py-2 bg-white/5 border border-white/10 rounded-lg text-white text-sm focus:outline-none focus:ring-2 focus:ring-[color:var(--primary)]/50"
               />
             </div>
             <div>
@@ -171,7 +171,7 @@ export default function AdminHeroPage() {
                 type="text"
                 value={data.cta.secondary.label}
                 onChange={(e) => setData({ ...data, cta: { ...data.cta, secondary: { ...data.cta.secondary, label: e.target.value } } })}
-                className="w-full px-3 py-2 bg-white/5 border border-white/10 rounded-lg text-white text-sm focus:outline-none focus:ring-2 focus:ring-amber-500/50"
+                className="w-full px-3 py-2 bg-white/5 border border-white/10 rounded-lg text-white text-sm focus:outline-none focus:ring-2 focus:ring-[color:var(--primary)]/50"
               />
             </div>
             <div>
@@ -180,7 +180,7 @@ export default function AdminHeroPage() {
                 type="text"
                 value={data.cta.secondary.href}
                 onChange={(e) => setData({ ...data, cta: { ...data.cta, secondary: { ...data.cta.secondary, href: e.target.value } } })}
-                className="w-full px-3 py-2 bg-white/5 border border-white/10 rounded-lg text-white text-sm focus:outline-none focus:ring-2 focus:ring-amber-500/50"
+                className="w-full px-3 py-2 bg-white/5 border border-white/10 rounded-lg text-white text-sm focus:outline-none focus:ring-2 focus:ring-[color:var(--primary)]/50"
               />
             </div>
           </div>
@@ -195,7 +195,7 @@ export default function AdminHeroPage() {
             type="text"
             value={data.services.join(", ")}
             onChange={(e) => setData({ ...data, services: e.target.value.split(",").map(s => s.trim()) })}
-            className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-amber-500/50"
+            className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-[color:var(--primary)]/50"
           />
         </div>
 
@@ -217,7 +217,7 @@ export default function AdminHeroPage() {
               type="text"
               value={data.image.alt}
               onChange={(e) => setData({ ...data, image: { ...data.image, alt: e.target.value } })}
-              className="w-full px-3 py-2 bg-white/5 border border-white/10 rounded-lg text-white text-sm focus:outline-none focus:ring-2 focus:ring-amber-500/50"
+              className="w-full px-3 py-2 bg-white/5 border border-white/10 rounded-lg text-white text-sm focus:outline-none focus:ring-2 focus:ring-[color:var(--primary)]/50"
             />
           </div>
         </div>
@@ -239,7 +239,7 @@ export default function AdminHeroPage() {
               value={data.videoUrl || ""}
               onChange={(e) => setData({ ...data, videoUrl: e.target.value })}
               placeholder="https://www.youtube.com/watch?v=..."
-              className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-amber-500/50"
+              className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-[color:var(--primary)]/50"
             />
           </div>
           
@@ -252,7 +252,7 @@ export default function AdminHeroPage() {
                 value={data.videoTitle || ""}
                 onChange={(e) => setData({ ...data, videoTitle: e.target.value })}
                 placeholder="Behind the Lens"
-                className="w-full px-3 py-2 bg-white/5 border border-white/10 rounded-lg text-white text-sm focus:outline-none focus:ring-2 focus:ring-amber-500/50"
+                className="w-full px-3 py-2 bg-white/5 border border-white/10 rounded-lg text-white text-sm focus:outline-none focus:ring-2 focus:ring-[color:var(--primary)]/50"
               />
             </div>
             <div>
@@ -262,7 +262,7 @@ export default function AdminHeroPage() {
                 value={data.videoSubtitle || ""}
                 onChange={(e) => setData({ ...data, videoSubtitle: e.target.value })}
                 placeholder="Watch our creative process..."
-                className="w-full px-3 py-2 bg-white/5 border border-white/10 rounded-lg text-white text-sm focus:outline-none focus:ring-2 focus:ring-amber-500/50"
+                className="w-full px-3 py-2 bg-white/5 border border-white/10 rounded-lg text-white text-sm focus:outline-none focus:ring-2 focus:ring-[color:var(--primary)]/50"
               />
             </div>
           </div>
@@ -277,7 +277,7 @@ export default function AdminHeroPage() {
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-14 h-14 rounded-full bg-amber-500/90 flex items-center justify-center">
+                  <div className="w-14 h-14 rounded-full bg-[color:var(--primary)]/90 flex items-center justify-center">
                     <svg viewBox="0 0 24 24" className="w-6 h-6 text-white ml-1" fill="currentColor">
                       <path d="M8 5v14l11-7z" />
                     </svg>
@@ -290,7 +290,7 @@ export default function AdminHeroPage() {
             </div>
           )}
           {data.videoUrl && !getYouTubeId(data.videoUrl) && (
-            <p className="text-xs text-amber-400 mt-2">
+            <p className="text-xs text-[color:var(--primary)] mt-2">
               Could not detect a valid YouTube video ID. Please check the URL format.
             </p>
           )}

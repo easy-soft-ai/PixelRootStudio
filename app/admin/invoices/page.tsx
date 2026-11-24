@@ -40,7 +40,7 @@ const statusColors: Record<string, string> = {
 const filters = ["all", "draft", "sent", "partial", "paid", "overdue", "cancelled"];
 
 const inputClass =
-  "w-full px-3 py-2 bg-white/5 border border-white/10 rounded-lg text-white text-sm placeholder:text-white/30 focus:outline-none focus:ring-2 focus:ring-amber-500/50 [color-scheme:dark]";
+  "w-full px-3 py-2 bg-white/5 border border-white/10 rounded-lg text-white text-sm placeholder:text-white/30 focus:outline-none focus:ring-2 focus:ring-[color:var(--primary)]/50 [color-scheme:dark]";
 
 function matchesSearch(inv: Invoice, query: string) {
   if (!query) return true;
@@ -127,7 +127,7 @@ export default function AdminInvoicesPage() {
         </div>
         <Link
           href="/admin/invoices/new"
-          className="px-4 py-2 bg-amber-500 hover:bg-amber-400 text-slate-900 font-semibold rounded-lg text-sm"
+          className="px-4 py-2 bg-[color:var(--primary)] hover:opacity-90 text-white font-semibold rounded-lg text-sm"
         >
           + New Invoice
         </Link>
@@ -139,8 +139,8 @@ export default function AdminInvoicesPage() {
             <p className="text-lg font-bold text-green-400">{formatMoney(accounting.totalPaid)}</p>
             <p className="text-xs text-white/45 mt-1">Total collected</p>
           </div>
-          <div className="bg-amber-500/10 border border-amber-500/20 rounded-xl p-4">
-            <p className="text-lg font-bold text-amber-400">{formatMoney(accounting.totalOutstanding)}</p>
+          <div className="bg-[color:var(--primary)]/10 border border-[color:var(--primary)]/20 rounded-xl p-4">
+            <p className="text-lg font-bold text-[color:var(--primary)]">{formatMoney(accounting.totalOutstanding)}</p>
             <p className="text-xs text-white/45 mt-1">Outstanding</p>
           </div>
           <div className="bg-blue-500/10 border border-blue-500/20 rounded-xl p-4">
@@ -165,7 +165,7 @@ export default function AdminInvoicesPage() {
               onClick={() => setFilter(f)}
               className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors ${
                 filter === f
-                  ? "bg-amber-500 text-slate-900"
+                  ? "bg-[color:var(--primary)] text-white"
                   : "bg-white/5 border border-white/10 text-white/50 hover:text-white hover:bg-white/[0.08]"
               }`}
             >
@@ -215,7 +215,7 @@ export default function AdminInvoicesPage() {
             <button
               type="button"
               onClick={clearFilters}
-              className="text-xs text-amber-400 hover:text-amber-300 font-medium"
+              className="text-xs text-[color:var(--primary)] hover:text-[color:var(--primary)] font-medium"
             >
               Clear filters
             </button>
@@ -228,7 +228,7 @@ export default function AdminInvoicesPage() {
           {invoices.length === 0 ? (
             <>
               No invoices yet.{" "}
-              <Link href="/admin/invoices/new" className="text-amber-400 hover:underline">
+              <Link href="/admin/invoices/new" className="text-[color:var(--primary)] hover:underline">
                 Create one
               </Link>
             </>
@@ -243,7 +243,7 @@ export default function AdminInvoicesPage() {
               <div key={inv.id} className="flex items-center justify-between px-5 py-4 hover:bg-white/[0.03]">
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2 mb-1">
-                    <Link href={`/admin/invoices/${inv.id}`} className="text-sm font-medium text-white hover:text-amber-400">
+                    <Link href={`/admin/invoices/${inv.id}`} className="text-sm font-medium text-white hover:text-[color:var(--primary)]">
                       {inv.invoiceNumber}
                     </Link>
                     <span className={`text-[9px] font-bold uppercase px-2 py-0.5 rounded ${statusColors[inv.status]}`}>
@@ -252,7 +252,7 @@ export default function AdminInvoicesPage() {
                     {inv.bookingId && (
                       <Link
                         href={`/admin/bookings?highlight=${inv.bookingId}`}
-                        className="text-[9px] text-white/30 hover:text-amber-400"
+                        className="text-[9px] text-white/30 hover:text-[color:var(--primary)]"
                       >
                         Booking #{inv.bookingId}
                       </Link>
@@ -274,7 +274,7 @@ export default function AdminInvoicesPage() {
                   <span className="text-sm font-semibold text-white">
                     {formatMoney(inv.total || 0, inv.currency || "BDT")}
                   </span>
-                  <Link href={`/admin/invoices/${inv.id}`} className="text-xs text-amber-400 hover:underline">
+                  <Link href={`/admin/invoices/${inv.id}`} className="text-xs text-[color:var(--primary)] hover:underline">
                     Edit
                   </Link>
                   <button onClick={() => handleDelete(inv.id)} className="text-xs text-red-400 hover:text-red-300">

@@ -122,7 +122,7 @@ export function BookingCalendar({ bookings }: Props) {
   const selectedBookings = selectedDate ? bookingsByDate[selectedDate] || [] : [];
 
   const inputClass =
-    "px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-white text-xs placeholder:text-white/30 focus:outline-none focus:ring-2 focus:ring-amber-500/50";
+    "px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-white text-xs placeholder:text-white/30 focus:outline-none focus:ring-2 focus:ring-[color:var(--primary)]/50";
 
   return (
     <div>
@@ -135,7 +135,7 @@ export function BookingCalendar({ bookings }: Props) {
         </div>
         <Link
           href="/admin/bookings"
-          className="px-3 py-1.5 text-xs font-semibold text-amber-400 border border-amber-500/25 rounded-lg hover:bg-amber-500/10 self-start"
+          className="px-3 py-1.5 text-xs font-semibold text-[color:var(--primary)] border border-[color:var(--primary)]/25 rounded-lg hover:opacity-90/10 self-start"
         >
           List View →
         </Link>
@@ -151,7 +151,7 @@ export function BookingCalendar({ bookings }: Props) {
               onClick={() => setStatusFilter(s)}
               className={`px-3 py-1 rounded-lg text-xs font-semibold transition-colors ${
                 statusFilter === s
-                  ? "bg-amber-500 text-slate-900"
+                  ? "bg-[color:var(--primary)] text-white"
                   : "bg-white/5 border border-white/10 text-white/50 hover:text-white"
               }`}
             >
@@ -255,9 +255,9 @@ export function BookingCalendar({ bookings }: Props) {
                     onClick={() => setSelectedDate(cell.dateKey)}
                     className={`min-h-[72px] sm:min-h-[80px] p-1.5 rounded-lg text-left transition-colors border ${
                       isSelected
-                        ? "bg-amber-500/10 border-amber-500/30"
+                        ? "bg-[color:var(--primary)]/10 border-[color:var(--primary)]/30"
                         : isToday
-                          ? "bg-white/[0.04] border-amber-500/20"
+                          ? "bg-white/[0.04] border-[color:var(--primary)]/20"
                           : "border-transparent hover:bg-white/[0.03] hover:border-white/5"
                     }`}
                   >
@@ -266,7 +266,7 @@ export function BookingCalendar({ bookings }: Props) {
                         !cell.inMonth
                           ? "text-white/20"
                           : isToday
-                            ? "bg-amber-500 text-slate-900"
+                            ? "bg-[color:var(--primary)] text-white"
                             : "text-white/70"
                       }`}
                     >

@@ -40,10 +40,10 @@ export function CtaBanner({
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.7, ease: easeOut }}
           >
-            <span className="inline-flex items-center gap-2 text-[10px] font-semibold tracking-[0.2em] uppercase text-amber-400/70 mb-5">
-              <span className="w-8 h-px bg-amber-400/30" />
+            <span className="inline-flex items-center gap-2 text-[10px] font-semibold tracking-[0.2em] uppercase text-[color:var(--primary)]/70 mb-5">
+              <span className="w-8 h-px bg-[color:var(--primary)]/30" />
               Let&apos;s Work Together
-              <span className="w-8 h-px bg-amber-400/30" />
+              <span className="w-8 h-px bg-[color:var(--primary)]/30" />
             </span>
 
             <h2 className="hero-headline text-[clamp(1.8rem,5vw,3rem)] font-bold text-white leading-tight tracking-[-0.02em] mb-4">
@@ -56,7 +56,7 @@ export function CtaBanner({
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
                 href={ctaHref}
-                className="inline-flex items-center gap-2.5 px-7 py-3 bg-amber-500 text-black text-sm font-semibold rounded-full hover:bg-amber-400 transition-colors duration-200"
+                className="inline-flex items-center gap-2.5 px-7 py-3 bg-[color:var(--primary)] text-white text-sm font-semibold rounded-full hover:opacity-90 transition-colors duration-200"
               >
                 {ctaLabel}
                 <svg viewBox="0 0 16 16" className="w-4 h-4" fill="none" aria-hidden="true">

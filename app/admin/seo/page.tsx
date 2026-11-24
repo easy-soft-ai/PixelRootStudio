@@ -29,7 +29,7 @@ type SiteSettingsData = {
 };
 
 const inputClass =
-  "w-full px-3 py-2 bg-white/5 border border-white/10 rounded-lg text-white text-sm placeholder:text-white/30 focus:outline-none focus:ring-2 focus:ring-amber-500/50";
+  "w-full px-3 py-2 bg-white/5 border border-white/10 rounded-lg text-white text-sm placeholder:text-white/30 focus:outline-none focus:ring-2 focus:ring-[color:var(--primary)]/50";
 
 export default function AdminSiteSettingsPage() {
   const [data, setData] = useState<SiteSettingsData | null>(null);
@@ -113,7 +113,7 @@ export default function AdminSiteSettingsPage() {
         <button
           onClick={handleSave}
           disabled={saving}
-          className="px-5 py-2.5 bg-amber-500 hover:bg-amber-400 disabled:bg-amber-500/50 text-slate-900 font-semibold rounded-lg transition-colors"
+          className="px-5 py-2.5 bg-[color:var(--primary)] hover:opacity-90 disabled:bg-[color:var(--primary)]/50 text-white font-semibold rounded-lg transition-colors"
         >
           {saving ? "Saving..." : "Save Settings"}
         </button>
@@ -429,7 +429,7 @@ export default function AdminSiteSettingsPage() {
         <button
           onClick={handleSave}
           disabled={saving}
-          className="px-5 py-2.5 bg-amber-500 hover:bg-amber-400 disabled:bg-amber-500/50 text-slate-900 font-semibold rounded-lg text-sm"
+          className="px-5 py-2.5 bg-[color:var(--primary)] hover:opacity-90 disabled:bg-[color:var(--primary)]/50 text-white font-semibold rounded-lg text-sm"
         >
           {saving ? "Saving..." : "Save Settings"}
         </button>

@@ -65,7 +65,7 @@ export default function AdminGalleryPage() {
         </div>
         <button
           onClick={() => setEditing({ src: "", alt: "", aspect: "landscape" })}
-          className="px-5 py-2.5 bg-amber-500 hover:bg-amber-400 text-slate-900 font-semibold rounded-lg transition-colors"
+          className="px-5 py-2.5 bg-[color:var(--primary)] hover:opacity-90 text-white font-semibold rounded-lg transition-colors"
         >
           Add Image
         </button>
@@ -116,7 +116,7 @@ export default function AdminGalleryPage() {
               <button
                 onClick={handleAdd}
                 disabled={saving || !editing.src || !editing.alt}
-                className="px-4 py-2 bg-amber-500 hover:bg-amber-400 disabled:bg-amber-500/50 text-slate-900 font-semibold rounded-lg text-sm"
+                className="px-4 py-2 bg-[color:var(--primary)] hover:opacity-90 disabled:bg-[color:var(--primary)]/50 text-white font-semibold rounded-lg text-sm"
               >
                 {saving ? "Adding..." : "Add Image"}
               </button>

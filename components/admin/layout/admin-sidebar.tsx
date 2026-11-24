@@ -156,7 +156,7 @@ function NavLink({
       onClick={onNavigate}
       className={`flex items-center gap-3 px-3 py-2 rounded-lg text-[13px] font-medium transition-colors ${
         active
-          ? "bg-amber-500/15 text-amber-400 border border-amber-500/20"
+          ? "bg-[color:var(--primary)]/15 text-[color:var(--primary)] border border-[color:var(--primary)]/20"
           : "text-white/55 hover:text-white hover:bg-white/5 border border-transparent"
       }`}
     >

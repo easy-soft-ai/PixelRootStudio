@@ -40,7 +40,7 @@ export function ProjectHero({ title, coverImage, category, date, client: clientN
           className="mb-4"
         >
           <span className="inline-flex items-center gap-2 text-[10px] font-semibold tracking-[0.16em] uppercase text-white/60 border border-white/15 rounded-full px-3.5 py-1 backdrop-blur-sm bg-white/[0.04]">
-            <span className="w-1.5 h-1.5 rounded-full bg-amber-400 shrink-0" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[color:var(--primary)] shrink-0" />
             {category?.name || "Project"}
           </span>
         </motion.div>

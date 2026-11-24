@@ -68,7 +68,7 @@ export function SiteFooter() {
   return (
     <footer className="relative mt-auto border-t border-[color:var(--border)] bg-[color:var(--surface)]">
       {/* Subtle top accent */}
-      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-amber-500/30 to-transparent" />
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[color:var(--primary)]/30 to-transparent" />
 
       <div className="px-5 sm:px-10 lg:px-16 max-w-[1400px] mx-auto pt-12 sm:pt-16 pb-[calc(5.5rem+env(safe-area-inset-bottom,0px)+2rem)] sm:pb-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8">
@@ -84,7 +84,7 @@ export function SiteFooter() {
                   className="h-8 sm:h-9 w-auto object-contain object-left"
                 />
               ) : (
-                <h2 className="hero-headline text-xl sm:text-2xl font-bold text-[color:var(--text)] tracking-tight group-hover:text-amber-500 transition-colors">
+                <h2 className="hero-headline text-xl sm:text-2xl font-bold text-[color:var(--text)] tracking-tight group-hover:text-[color:var(--primary)] transition-colors">
                   {siteSeo.siteName}
                 </h2>
               )}
@@ -94,7 +94,7 @@ export function SiteFooter() {
                 {tagline}
               </p>
             )}
-            <p className="mt-4 text-[10px] font-semibold tracking-[0.15em] uppercase text-amber-500/80">
+            <p className="mt-4 text-[10px] font-semibold tracking-[0.15em] uppercase text-[color:var(--primary)]/80">
               Uncompromising Quality
             </p>
           </div>
@@ -109,7 +109,7 @@ export function SiteFooter() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-[color:var(--text)] hover:text-amber-500 transition-colors"
+                    className="text-sm text-[color:var(--text)] hover:text-[color:var(--primary)] transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -128,9 +128,9 @@ export function SiteFooter() {
                 <li>
                   <a
                     href={`mailto:${email}`}
-                    className="flex items-center gap-2.5 text-sm text-[color:var(--text)] hover:text-amber-500 transition-colors group"
+                    className="flex items-center gap-2.5 text-sm text-[color:var(--text)] hover:text-[color:var(--primary)] transition-colors group"
                   >
-                    <span className="w-8 h-8 rounded-full bg-[color:var(--bg)] border border-[color:var(--border)] flex items-center justify-center text-[color:var(--muted)] group-hover:border-amber-500/30 group-hover:text-amber-500 transition-all shrink-0">
+                    <span className="w-8 h-8 rounded-full bg-[color:var(--bg)] border border-[color:var(--border)] flex items-center justify-center text-[color:var(--muted)] group-hover:border-[color:var(--primary)]/30 group-hover:text-[color:var(--primary)] transition-all shrink-0">
                       <svg viewBox="0 0 24 24" className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
                         <path d="M5 8.5A2.5 2.5 0 0 1 7.5 6h9A2.5 2.5 0 0 1 19 8.5v7a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 5 15.5v-7z" strokeLinecap="round" strokeLinejoin="round" />
                         <path d="m6 8 6 4.5L18 8" strokeLinecap="round" strokeLinejoin="round" />
@@ -144,9 +144,9 @@ export function SiteFooter() {
                 <li>
                   <a
                     href={`tel:${phone.replace(/\s/g, "")}`}
-                    className="flex items-center gap-2.5 text-sm text-[color:var(--text)] hover:text-amber-500 transition-colors group"
+                    className="flex items-center gap-2.5 text-sm text-[color:var(--text)] hover:text-[color:var(--primary)] transition-colors group"
                   >
-                    <span className="w-8 h-8 rounded-full bg-[color:var(--bg)] border border-[color:var(--border)] flex items-center justify-center text-[color:var(--muted)] group-hover:border-amber-500/30 group-hover:text-amber-500 transition-all shrink-0">
+                    <span className="w-8 h-8 rounded-full bg-[color:var(--bg)] border border-[color:var(--border)] flex items-center justify-center text-[color:var(--muted)] group-hover:border-[color:var(--primary)]/30 group-hover:text-[color:var(--primary)] transition-all shrink-0">
                       <svg viewBox="0 0 24 24" className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
                         <path d="M6.5 4h3l1.5 5-2 1.5a11 11 0 0 0 5 5L17.5 13.5 22.5 15v3a2 2 0 0 1-2.2 2 17 17 0 0 1-15.3-15.3A2 2 0 0 1 6.5 4z" strokeLinecap="round" strokeLinejoin="round" />
                       </svg>
@@ -158,7 +158,7 @@ export function SiteFooter() {
               <li>
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-1.5 text-xs font-semibold tracking-[0.08em] uppercase text-amber-500 hover:text-amber-400 transition-colors mt-1"
+                  className="inline-flex items-center gap-1.5 text-xs font-semibold tracking-[0.08em] uppercase text-[color:var(--primary)] hover:text-[color:var(--primary)] transition-colors mt-1"
                 >
                   Get in touch
                   <svg viewBox="0 0 12 12" className="w-3 h-3" fill="none" aria-hidden="true">
@@ -183,7 +183,7 @@ export function SiteFooter() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`Follow on ${link.label}`}
-                    className="w-10 h-10 rounded-full bg-[color:var(--bg)] border border-[color:var(--border)] flex items-center justify-center text-[color:var(--muted)] hover:border-amber-500/40 hover:text-amber-500 hover:bg-amber-500/5 transition-all duration-300"
+                    className="w-10 h-10 rounded-full bg-[color:var(--bg)] border border-[color:var(--border)] flex items-center justify-center text-[color:var(--muted)] hover:border-[color:var(--primary)]/40 hover:text-[color:var(--primary)] hover:opacity-90/5 transition-all duration-300"
                   >
                     <SocialIcon id={link.id} />
                   </a>

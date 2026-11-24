@@ -136,8 +136,8 @@ export function HeroSection({ heroData }: { heroData: HeroData }) {
             <motion.div custom={0} variants={fadeUp}>
               <span className="inline-flex items-center gap-2.5 text-[10px] sm:text-[11px] font-semibold tracking-[0.2em] uppercase text-white/50 border border-white/10 rounded-full px-4 py-2 backdrop-blur-sm bg-white/[0.03] mb-6">
                 <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75" />
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-400" />
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[color:var(--primary)] opacity-75" />
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[color:var(--primary)]" />
                 </span>
                 {heroData.badge}
               </span>
@@ -155,7 +155,7 @@ export function HeroSection({ heroData }: { heroData: HeroData }) {
               <>
                 <br />
                 <span className="relative">
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-amber-400 to-amber-500">
+                  <span className="text-[color:var(--primary)]">
                     {heroData.headline[1]}
                   </span>
                 </span>
@@ -183,7 +183,7 @@ export function HeroSection({ heroData }: { heroData: HeroData }) {
             {heroData?.cta?.primary && (
               <Link
                 href={heroData.cta.primary.href || "#"}
-                className="group inline-flex items-center gap-2.5 px-7 py-4 rounded-full bg-gradient-to-r from-amber-400 to-amber-500 text-black text-sm font-semibold tracking-wide shadow-[0_0_40px_rgba(251,191,36,0.25)] hover:shadow-[0_0_60px_rgba(251,191,36,0.4)] transition-all duration-500"
+                className="group inline-flex items-center gap-2.5 px-7 py-4 rounded-full bg-[color:var(--primary)] text-white text-sm font-semibold tracking-wide shadow-[0_0_40px_rgba(74,131,216,0.35)] hover:shadow-[0_0_60px_rgba(74,131,216,0.5)] hover:opacity-90 transition-all duration-500"
               >
                 {heroData.cta.primary.label}
                 <svg 

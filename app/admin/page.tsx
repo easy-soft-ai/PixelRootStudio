@@ -27,7 +27,7 @@ const LEAD_STATUS_COLORS: Record<string, string> = {
   closed: "#94a3b8",
 };
 
-const PACKAGE_COLORS = ["#fbbf24", "#60a5fa", "#34d399", "#a78bfa", "#f472b6", "#fb923c"];
+const PACKAGE_COLORS = ["#4a83d8", "#60a5fa", "#34d399", "#a78bfa", "#f472b6", "#fb923c"];
 
 function countByField<T extends string>(
   rows: { value: T | null }[],
@@ -188,7 +188,7 @@ export default function AdminDashboard() {
       <div className="mb-8">
         <h2 className="text-xl font-bold text-white">Welcome back</h2>
         <p className="text-sm text-white/50 mt-1">
-          Manage your studio website — content, portfolio, leads, and settings.
+          Manage your studio website: content, portfolio, leads, and settings.
         </p>
       </div>
 
@@ -202,14 +202,14 @@ export default function AdminDashboard() {
             href={card.href}
             className={`hover:bg-white/[0.08] border hover:border-white/15 rounded-xl p-4 transition-colors ${
               "highlight" in card && card.highlight && stats[card.key] > 0
-                ? "bg-amber-500/10 border-amber-500/20"
+                ? "bg-[color:var(--primary)]/10 border-[color:var(--primary)]/20"
                 : "bg-white/5 border-white/10"
             }`}
           >
             <p
               className={`text-2xl font-bold ${
                 "highlight" in card && card.highlight && stats[card.key] > 0
-                  ? "text-amber-400"
+                  ? "text-[color:var(--primary)]"
                   : "text-white"
               }`}
             >
@@ -255,7 +255,7 @@ export default function AdminDashboard() {
                       </span>
                     )}
                   </div>
-                  <span className="text-xs text-amber-400/70 group-hover:text-amber-400 shrink-0 ml-4">
+                  <span className="text-xs text-[color:var(--primary)]/70 group-hover:text-[color:var(--primary)] shrink-0 ml-4">
                     Open →
                   </span>
                 </Link>

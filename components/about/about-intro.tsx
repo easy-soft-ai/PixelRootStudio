@@ -20,7 +20,7 @@ export function AboutIntro({ aboutData }: { aboutData: any }) {
       <section className="relative h-[58vh] min-h-[320px] max-h-[520px] flex flex-col overflow-hidden bg-black">
         <Image
           src={aboutData.bannerImage}
-          alt="Photographer at work — PixelRoot Studio"
+          alt="Photographer at work, PixelRoot Studio"
           fill
           priority
           quality={90}
@@ -66,8 +66,8 @@ export function AboutIntro({ aboutData }: { aboutData: any }) {
                 />
                 {/* Founder badge */}
                 <div className="absolute bottom-4 left-4">
-                  <span className="inline-flex items-center gap-2 text-[11px] font-semibold tracking-[0.16em] uppercase text-white bg-black/55 backdrop-blur-sm border border-amber-400/30 rounded-full px-4 py-1.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
+                  <span className="inline-flex items-center gap-2 text-[11px] font-semibold tracking-[0.16em] uppercase text-white bg-black/55 backdrop-blur-sm border border-[color:var(--primary)]/30 rounded-full px-4 py-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[color:var(--primary)]" />
                     Founder
                   </span>
                 </div>
@@ -156,7 +156,7 @@ export function AboutIntro({ aboutData }: { aboutData: any }) {
                       className="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-3 py-3 border-b border-[color:var(--border)] last:border-0"
                     >
                       <div className="flex items-start gap-3 flex-1 min-w-0">
-                        <span className="w-1.5 h-1.5 rounded-full bg-amber-400 mt-2 shrink-0" />
+                        <span className="w-1.5 h-1.5 rounded-full bg-[color:var(--primary)] mt-2 shrink-0" />
                         <div className="flex-1 min-w-0">
                           <p className="text-sm font-semibold text-[color:var(--text)] leading-tight">
                             {exp.role}
@@ -216,14 +216,14 @@ export function AboutIntro({ aboutData }: { aboutData: any }) {
         </div>
         <div className="relative z-10 px-5 sm:px-10 lg:px-16 max-w-[900px] mx-auto text-center">
           <motion.div {...fadeUp(0)}>
-            <span className="block text-[11px] font-semibold tracking-[0.22em] uppercase text-amber-400/80 mb-6">
+            <span className="block text-[11px] font-semibold tracking-[0.22em] uppercase text-[color:var(--primary)]/80 mb-6">
               My Vision
             </span>
             <blockquote className="hero-headline text-[1.5rem] sm:text-[2rem] lg:text-[2.4rem] font-bold text-white leading-[1.3] tracking-[-0.01em]">
               &ldquo;{aboutData.vision}&rdquo;
             </blockquote>
             <p className="mt-6 text-white/40 text-sm font-medium">
-              — {aboutData.shortName}, Founder of PixelRoot Studio
+              {aboutData.shortName}, Founder of PixelRoot Studio
             </p>
           </motion.div>
         </div>

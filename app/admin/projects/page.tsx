@@ -50,7 +50,7 @@ export default function AdminProjectsPage() {
         </div>
         <Link
           href="/admin/projects/new"
-          className="px-5 py-2.5 bg-amber-500 hover:bg-amber-400 text-slate-900 font-semibold rounded-lg transition-colors"
+          className="px-5 py-2.5 bg-[color:var(--primary)] hover:opacity-90 text-white font-semibold rounded-lg transition-colors"
         >
           Add Project
         </Link>
@@ -61,7 +61,7 @@ export default function AdminProjectsPage() {
           <p className="text-white/50 mb-4">No projects yet</p>
           <Link
             href="/admin/projects/new"
-            className="inline-block px-5 py-2.5 bg-amber-500 hover:bg-amber-400 text-slate-900 font-semibold rounded-lg transition-colors"
+            className="inline-block px-5 py-2.5 bg-[color:var(--primary)] hover:opacity-90 text-white font-semibold rounded-lg transition-colors"
           >
             Create your first project
           </Link>
@@ -107,7 +107,7 @@ export default function AdminProjectsPage() {
                     </td>
                     <td className="p-4">
                       {project.featured ? (
-                        <span className="text-xs bg-amber-500/20 text-amber-400 px-2 py-1 rounded">Featured</span>
+                        <span className="text-xs bg-[color:var(--primary)]/20 text-[color:var(--primary)] px-2 py-1 rounded">Featured</span>
                       ) : (
                         <span className="text-xs text-white/30">—</span>
                       )}
@@ -123,7 +123,7 @@ export default function AdminProjectsPage() {
                       </a>
                       <Link
                         href={`/admin/projects/${project.id}`}
-                        className="text-sm text-amber-400 hover:underline mr-4"
+                        className="text-sm text-[color:var(--primary)] hover:underline mr-4"
                       >
                         Edit
                       </Link>

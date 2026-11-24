@@ -65,10 +65,10 @@ export function PackageDetailClient({ pkg, relatedPackages = [], isCustomInquiry
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: easeOut }}
             >
-              <span className="inline-flex items-center gap-2 text-[10px] font-semibold tracking-[0.2em] uppercase text-amber-400/70 mb-5">
-                <span className="w-8 h-px bg-amber-400/30" />
+              <span className="inline-flex items-center gap-2 text-[10px] font-semibold tracking-[0.2em] uppercase text-[color:var(--primary)]/70 mb-5">
+                <span className="w-8 h-px bg-[color:var(--primary)]/30" />
                 Custom Solutions
-                <span className="w-8 h-px bg-amber-400/30" />
+                <span className="w-8 h-px bg-[color:var(--primary)]/30" />
               </span>
               <h1 className="hero-headline text-[clamp(2rem,5vw,3.5rem)] font-bold text-white leading-[0.95] tracking-[-0.03em] mb-4">
                 Custom Quote
@@ -141,11 +141,11 @@ export function PackageDetailClient({ pkg, relatedPackages = [], isCustomInquiry
             transition={{ duration: 0.7, ease: easeOut, delay: 0.1 }}
           >
             <div className="flex items-center gap-3 mb-4">
-              <span className="text-[10px] font-semibold tracking-[0.2em] uppercase text-amber-400/70">
+              <span className="text-[10px] font-semibold tracking-[0.2em] uppercase text-[color:var(--primary)]/70">
                 {categoryLabels[pkg.category] || pkg.category}
               </span>
               {pkg.popular && (
-                <span className="inline-flex items-center text-[9px] font-bold tracking-[0.15em] uppercase bg-amber-500 text-black px-2.5 py-0.5 rounded-full">
+                <span className="inline-flex items-center text-[9px] font-bold tracking-[0.15em] uppercase bg-[color:var(--primary)] text-white px-2.5 py-0.5 rounded-full">
                   Popular
                 </span>
               )}
@@ -233,7 +233,7 @@ export function PackageDetailClient({ pkg, relatedPackages = [], isCustomInquiry
                         key={i}
                         className="flex items-start gap-3 p-3.5 rounded-xl bg-[color:var(--surface)] border border-[color:var(--border)]"
                       >
-                        <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-amber-500 shrink-0" />
+                        <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[color:var(--primary)] shrink-0" />
                         <span className="text-sm text-[color:var(--text)]">{feature}</span>
                       </div>
                     ))}
@@ -272,12 +272,12 @@ export function PackageDetailClient({ pkg, relatedPackages = [], isCustomInquiry
                 <Link
                   key={rPkg.id}
                   href={`/packages/${rPkg.slug}`}
-                  className="group flex flex-col p-5 rounded-xl border border-[color:var(--border)] bg-[color:var(--surface)] hover:border-amber-500/30 transition-colors duration-300"
+                  className="group flex flex-col p-5 rounded-xl border border-[color:var(--border)] bg-[color:var(--surface)] hover:border-[color:var(--primary)]/30 transition-colors duration-300"
                 >
                   <span className="text-[10px] font-semibold tracking-[0.15em] uppercase text-[color:var(--primary)]">
                     {categoryLabels[rPkg.category] || rPkg.category}
                   </span>
-                  <h3 className="hero-headline text-lg font-bold text-[color:var(--text)] mt-1 group-hover:text-amber-500 transition-colors">
+                  <h3 className="hero-headline text-lg font-bold text-[color:var(--text)] mt-1 group-hover:text-[color:var(--primary)] transition-colors">
                     {rPkg.name}
                   </h3>
                   <p className="text-xs text-[color:var(--muted)] mt-1">{rPkg.shortDescription}</p>

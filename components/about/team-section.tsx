@@ -9,7 +9,7 @@ export function TeamSection({
   showHeader = true,
   badge = "Our Team",
   title = "The People Behind\nEvery Great Shot",
-  subtitle = "A tight-knit team of creatives united by one goal — delivering visuals that exceed every expectation.",
+  subtitle = "A small team with one job: make the pictures worth keeping.",
 }: {
   teamData: any[];
   showHeader?: boolean;
@@ -63,7 +63,7 @@ export function TeamSection({
               className="group"
             >
               {/* Photo */}
-              <div className={`relative aspect-square rounded-2xl overflow-hidden mb-4 ${member.isFounder ? "ring-2 ring-amber-400/40 ring-offset-2 ring-offset-[color:var(--surface)]" : ""}`}>
+              <div className={`relative aspect-square rounded-2xl overflow-hidden mb-4 ${member.isFounder ? "ring-2 ring-[color:var(--primary)]/40 ring-offset-2 ring-offset-[color:var(--surface)]" : ""}`}>
                 <Image
                   src={member.photo}
                   alt={member.name}
@@ -77,7 +77,7 @@ export function TeamSection({
                 {/* Founder badge */}
                 {member.isFounder && (
                   <div className="absolute top-3 left-3">
-                    <span className="inline-flex items-center gap-1 text-[9px] font-bold tracking-[0.16em] uppercase text-black bg-amber-400 rounded-full px-2.5 py-1">
+                    <span className="inline-flex items-center gap-1 text-[9px] font-bold tracking-[0.16em] uppercase text-white bg-[color:var(--primary)] rounded-full px-2.5 py-1">
                       Founder
                     </span>
                   </div>
