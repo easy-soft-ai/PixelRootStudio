@@ -371,7 +371,7 @@ function formatProjectDetail(project: {
 }
 
 export function getProjectSlugs() {
-  return db.select({ slug: schema.projects.slug })
+  return db.select({ slug: schema.projects.slug, updatedAt: schema.projects.updatedAt })
     .from(schema.projects)
     .all();
 }

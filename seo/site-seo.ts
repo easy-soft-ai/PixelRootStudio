@@ -49,11 +49,6 @@ export function getHomeJsonLd() {
       url: siteSeo.siteUrl,
       description: siteSeo.description,
       inLanguage: "en",
-      potentialAction: {
-        "@type": "SearchAction",
-        target: `${siteSeo.siteUrl}/portfolio?q={search_term_string}`,
-        "query-input": "required name=search_term_string",
-      },
     },
     {
       "@context": "https://schema.org",

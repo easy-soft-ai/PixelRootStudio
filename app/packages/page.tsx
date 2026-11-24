@@ -6,6 +6,7 @@ export const dynamic = "force-dynamic";
 export const metadata = {
   title: "Photography Packages | PixelRoot Studio",
   description: "Premium photography packages for weddings, corporate events, fashion shoots, and more. Book your session today.",
+  alternates: { canonical: "/packages" },
 };
 
 export default function PackagesPage() {

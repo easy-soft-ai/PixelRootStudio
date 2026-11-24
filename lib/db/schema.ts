@@ -44,6 +44,22 @@ export const siteSettings = sqliteTable("site_settings", {
   logo: text("logo"),
   favicon: text("favicon"),
   ogImage: text("og_image"),
+
+  // Marketing tags
+  gtmContainerId: text("gtm_container_id"),
+  gtmEnabled: integer("gtm_enabled").notNull().default(0),
+  ga4MeasurementId: text("ga4_measurement_id"),
+  ga4Enabled: integer("ga4_enabled").notNull().default(0),
+  googleSiteVerification: text("google_site_verification"),
+  searchConsoleEnabled: integer("search_console_enabled").notNull().default(0),
+  clarityProjectId: text("clarity_project_id"),
+  clarityEnabled: integer("clarity_enabled").notNull().default(0),
+  facebookPixelId: text("facebook_pixel_id"),
+  facebookPixelEnabled: integer("facebook_pixel_enabled").notNull().default(0),
+  googleAdsId: text("google_ads_id"),
+  googleAdsLabel: text("google_ads_label"),
+  googleAdsEnabled: integer("google_ads_enabled").notNull().default(0),
+
   updatedAt: integer("updated_at", { mode: "timestamp" }).$defaultFn(() => new Date()),
 });
 

@@ -35,6 +35,19 @@ export function ensureBaseSchema(sqlite: Database.Database) {
       logo TEXT,
       favicon TEXT,
       og_image TEXT,
+      gtm_container_id TEXT,
+      gtm_enabled INTEGER NOT NULL DEFAULT 0,
+      ga4_measurement_id TEXT,
+      ga4_enabled INTEGER NOT NULL DEFAULT 0,
+      google_site_verification TEXT,
+      search_console_enabled INTEGER NOT NULL DEFAULT 0,
+      clarity_project_id TEXT,
+      clarity_enabled INTEGER NOT NULL DEFAULT 0,
+      facebook_pixel_id TEXT,
+      facebook_pixel_enabled INTEGER NOT NULL DEFAULT 0,
+      google_ads_id TEXT,
+      google_ads_label TEXT,
+      google_ads_enabled INTEGER NOT NULL DEFAULT 0,
       updated_at INTEGER
     );
 

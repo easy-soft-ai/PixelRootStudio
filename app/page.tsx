@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { JsonLd } from "@/seo/json-ld";
 import { getHomeJsonLd } from "@/seo/site-seo";
 import { HeroSection } from "@/components/home/hero-section";
@@ -10,6 +11,10 @@ import { PackagesPreview } from "@/components/home/packages-preview";
 import { CtaBanner } from "@/components/home/cta-banner";
 import { getHero, getFeaturedCategories, getFeaturedGalleryItems, getGearSettings, getGearItems, getSocialSection, getPopularPackages, getPackageSettings, getCorporateClientsSettings, getPublishedCorporateClients } from "@/lib/db/queries";
 import { ClientsMarquee } from "@/components/home/clients-marquee";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 export const revalidate = 3600;
 

@@ -9,7 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const projects: MetadataRoute.Sitemap = slugs.map((item) => ({
     url: `${siteSeo.siteUrl}/portfolio/${item.slug}`,
-    lastModified: new Date(),
+    lastModified: item.updatedAt ?? undefined,
     changeFrequency: "monthly",
     priority: 0.8,
   }));
@@ -17,44 +17,38 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: siteSeo.siteUrl,
-      lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 1,
     },
     {
       url: `${siteSeo.siteUrl}/portfolio`,
-      lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.9,
     },
     {
       url: `${siteSeo.siteUrl}/about`,
-      lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
       url: `${siteSeo.siteUrl}/team`,
-      lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.75,
     },
     {
       url: `${siteSeo.siteUrl}/packages`,
-      lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.9,
     },
     {
       url: `${siteSeo.siteUrl}/contact`,
-      lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.9,
     },
     ...projects,
     ...packages.map((pkg) => ({
       url: `${siteSeo.siteUrl}/packages/${pkg.slug}`,
-      lastModified: new Date(),
+      lastModified: pkg.updatedAt ?? undefined,
       changeFrequency: "monthly" as const,
       priority: 0.8,
     })),
