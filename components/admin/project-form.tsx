@@ -183,7 +183,7 @@ export function ProjectForm({ initialData, isNew = false }: Props) {
               href={`/portfolio/${form.slug}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-xs text-amber-400 hover:text-amber-300 mt-1 inline-flex items-center gap-1"
+              className="text-xs text-[color:var(--primary)] hover:text-[color:var(--primary)] mt-1 inline-flex items-center gap-1"
             >
               View on site
               <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -195,7 +195,7 @@ export function ProjectForm({ initialData, isNew = false }: Props) {
         <button
           type="submit"
           disabled={saving || !form.title}
-          className="px-5 py-2.5 bg-amber-500 hover:bg-amber-400 disabled:bg-amber-500/50 text-slate-900 font-semibold rounded-lg text-sm transition-colors"
+          className="px-5 py-2.5 bg-[color:var(--primary)] hover:opacity-90 disabled:bg-[color:var(--primary)]/50 text-white font-semibold rounded-lg text-sm transition-colors"
         >
           {saving ? "Saving..." : isNew ? "Create Project" : "Save Changes"}
         </button>
@@ -351,7 +351,7 @@ export function ProjectForm({ initialData, isNew = false }: Props) {
           <button
             type="button"
             onClick={addParagraph}
-            className="text-xs text-amber-400 hover:text-amber-300"
+            className="text-xs text-[color:var(--primary)] hover:text-[color:var(--primary)]"
           >
             + Add paragraph
           </button>
@@ -387,7 +387,7 @@ export function ProjectForm({ initialData, isNew = false }: Props) {
           <button
             type="button"
             onClick={addGalleryImage}
-            className="text-xs text-amber-400 hover:text-amber-300"
+            className="text-xs text-[color:var(--primary)] hover:text-[color:var(--primary)]"
           >
             + Add image
           </button>
@@ -447,7 +447,7 @@ export function ProjectForm({ initialData, isNew = false }: Props) {
                 key={member.id}
                 className={`flex items-center gap-3 p-3 rounded-lg border cursor-pointer transition-colors ${
                   form.teamMemberIds.includes(member.id)
-                    ? "border-amber-500/40 bg-amber-500/5"
+                    ? "border-[color:var(--primary)]/40 bg-[color:var(--primary)]/5"
                     : "border-white/10 hover:border-white/20"
                 }`}
               >
@@ -507,7 +507,7 @@ export function ProjectForm({ initialData, isNew = false }: Props) {
         <button
           type="submit"
           disabled={saving || !form.title}
-          className="px-5 py-2.5 bg-amber-500 hover:bg-amber-400 disabled:bg-amber-500/50 text-slate-900 font-semibold rounded-lg text-sm"
+          className="px-5 py-2.5 bg-[color:var(--primary)] hover:opacity-90 disabled:bg-[color:var(--primary)]/50 text-white font-semibold rounded-lg text-sm"
         >
           {saving ? "Saving..." : isNew ? "Create Project" : "Save Changes"}
         </button>

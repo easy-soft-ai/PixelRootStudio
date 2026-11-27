@@ -118,7 +118,7 @@ function MonthlyBars({ data }: { data: MonthlyCount[] }) {
         <div key={month.month} className="flex-1 flex flex-col items-center gap-1 min-w-0">
           <div className="flex items-end justify-center gap-0.5 w-full h-28">
             <div
-              className="w-[42%] rounded-t-sm bg-amber-500/80 transition-all duration-500"
+              className="w-[42%] rounded-t-sm bg-[color:var(--primary)]/80 transition-all duration-500"
               style={{ height: `${(month.leads / max) * 100}%`, minHeight: month.leads > 0 ? 4 : 0 }}
               title={`${month.leads} leads`}
             />
@@ -177,7 +177,7 @@ export function DashboardCharts({ data }: { data: DashboardChartData }) {
               <DonutChart
                 segments={[
                   { label: "Bookings", value: data.totals.bookings, color: "#60a5fa" },
-                  { label: "Leads", value: data.totals.leads, color: "#fbbf24" },
+                  { label: "Leads", value: data.totals.leads, color: "#4a83d8" },
                   { label: "Projects", value: data.totals.projects, color: "#34d399" },
                 ]}
                 size={110}
@@ -190,7 +190,7 @@ export function DashboardCharts({ data }: { data: DashboardChartData }) {
             </div>
             <div className="space-y-2 flex-1 min-w-0">
               {[
-                { label: "Leads", value: data.totals.leads, color: "#fbbf24" },
+                { label: "Leads", value: data.totals.leads, color: "#4a83d8" },
                 { label: "Bookings", value: data.totals.bookings, color: "#60a5fa" },
                 { label: "Projects", value: data.totals.projects, color: "#34d399" },
                 { label: "Packages", value: data.totals.packages, color: "#a78bfa" },
@@ -230,13 +230,13 @@ export function DashboardCharts({ data }: { data: DashboardChartData }) {
         {/* Monthly activity */}
         <ChartCard
           title="Monthly Activity"
-          subtitle="Leads & bookings created — last 6 months"
+          subtitle="Leads and bookings created in the last 6 months"
           className="md:col-span-2 xl:col-span-2"
         >
           <MonthlyBars data={data.monthlyActivity} />
           <div className="flex gap-4 mt-3 pt-3 border-t border-white/5">
             <div className="flex items-center gap-1.5">
-              <span className="w-2.5 h-2.5 rounded-sm bg-amber-500/80" />
+              <span className="w-2.5 h-2.5 rounded-sm bg-[color:var(--primary)]/80" />
               <span className="text-[10px] text-white/40">Leads</span>
             </div>
             <div className="flex items-center gap-1.5">

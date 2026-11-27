@@ -12,6 +12,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: `${pkg.name} | PixelRoot Studio`,
     description: pkg.shortDescription || pkg.description || `${pkg.name} photography package`,
+    alternates: { canonical: `/packages/${slug}` },
   };
 }
 

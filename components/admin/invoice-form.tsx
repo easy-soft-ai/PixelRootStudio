@@ -52,7 +52,7 @@ export type InvoiceFormData = {
 };
 
 const inputClass =
-  "w-full px-3 py-2 bg-white/5 border border-white/10 rounded-lg text-white text-sm placeholder:text-white/30 focus:outline-none focus:ring-2 focus:ring-amber-500/50";
+  "w-full px-3 py-2 bg-white/5 border border-white/10 rounded-lg text-white text-sm placeholder:text-white/30 focus:outline-none focus:ring-2 focus:ring-[color:var(--primary)]/50";
 
 const STATUS_OPTIONS = ["draft", "sent", "partial", "paid", "overdue", "cancelled"];
 
@@ -387,7 +387,7 @@ export function InvoiceForm({ invoiceId, fromBookingId }: Props) {
               Linked to{" "}
               <Link
                 href={`/admin/bookings?highlight=${form.bookingId}`}
-                className="text-amber-400/80 hover:text-amber-400 hover:underline"
+                className="text-[color:var(--primary)]/80 hover:text-[color:var(--primary)] hover:underline"
               >
                 Booking #{form.bookingId}
               </Link>
@@ -406,7 +406,7 @@ export function InvoiceForm({ invoiceId, fromBookingId }: Props) {
             type="button"
             onClick={handleSave}
             disabled={saving}
-            className="px-5 py-2 bg-amber-500 hover:bg-amber-400 disabled:opacity-50 text-slate-900 font-semibold rounded-lg text-sm"
+            className="px-5 py-2 bg-[color:var(--primary)] hover:opacity-90 disabled:opacity-50 text-white font-semibold rounded-lg text-sm"
           >
             {saving ? "Saving..." : "Save Invoice"}
           </button>
@@ -549,7 +549,7 @@ export function InvoiceForm({ invoiceId, fromBookingId }: Props) {
           <button
             type="button"
             onClick={addItem}
-            className="px-4 py-3 text-xs text-amber-400 hover:text-amber-300"
+            className="px-4 py-3 text-xs text-[color:var(--primary)] hover:text-[color:var(--primary)]"
           >
             + Add line item
           </button>
@@ -599,7 +599,7 @@ export function InvoiceForm({ invoiceId, fromBookingId }: Props) {
             </div>
             <div className="flex justify-between font-bold text-lg text-white border-t border-white/10 pt-2">
               <span>Total</span>
-              <span className="text-amber-400">{formatMoney(totals?.total || 0, form.currency)}</span>
+              <span className="text-[color:var(--primary)]">{formatMoney(totals?.total || 0, form.currency)}</span>
             </div>
           </div>
         </div>
@@ -701,7 +701,7 @@ export function InvoiceForm({ invoiceId, fromBookingId }: Props) {
                   Paid invoice assets
                 </p>
                 <p className="text-[11px] text-white/35 mb-3">
-                  Shown on every invoice marked as Paid — upload a signature PNG and a paid seal/stamp PNG.
+                  Shown on every invoice marked as Paid. Upload a signature PNG and a paid seal PNG.
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <ImageUploader

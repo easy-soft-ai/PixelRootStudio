@@ -108,7 +108,7 @@ export default function AdminClientsPage() {
   }
 
   const inputClass =
-    "w-full px-3 py-2 bg-white/5 border border-white/10 rounded-lg text-white text-sm placeholder:text-white/30 focus:outline-none focus:ring-2 focus:ring-amber-500/50";
+    "w-full px-3 py-2 bg-white/5 border border-white/10 rounded-lg text-white text-sm placeholder:text-white/30 focus:outline-none focus:ring-2 focus:ring-[color:var(--primary)]/50";
 
   return (
     <div className="max-w-5xl mx-auto">
@@ -125,7 +125,7 @@ export default function AdminClientsPage() {
             setEditing({ ...emptyClient(), sortOrder: items.length });
             setIsNew(true);
           }}
-          className="px-5 py-2.5 bg-amber-500 hover:bg-amber-400 text-slate-900 font-semibold rounded-lg transition-colors text-sm"
+          className="px-5 py-2.5 bg-[color:var(--primary)] hover:opacity-90 text-white font-semibold rounded-lg transition-colors text-sm"
         >
           Add Client
         </button>
@@ -166,7 +166,7 @@ export default function AdminClientsPage() {
             type="button"
             onClick={handleSaveSettings}
             disabled={saving}
-            className="px-4 py-2 bg-amber-500 hover:bg-amber-400 text-slate-900 font-semibold rounded-lg text-sm disabled:opacity-50"
+            className="px-4 py-2 bg-[color:var(--primary)] hover:opacity-90 text-white font-semibold rounded-lg text-sm disabled:opacity-50"
           >
             {saving ? "Saving..." : "Save Settings"}
           </button>
@@ -232,7 +232,7 @@ export default function AdminClientsPage() {
                 type="button"
                 onClick={handleSaveItem}
                 disabled={saving || !editing.name.trim() || !editing.logoSrc}
-                className="px-4 py-2 bg-amber-500 hover:bg-amber-400 disabled:bg-amber-500/50 text-slate-900 font-semibold rounded-lg text-sm"
+                className="px-4 py-2 bg-[color:var(--primary)] hover:opacity-90 disabled:bg-[color:var(--primary)]/50 text-white font-semibold rounded-lg text-sm"
               >
                 {saving ? "Saving..." : "Save"}
               </button>
@@ -267,7 +267,7 @@ export default function AdminClientsPage() {
                     href={item.websiteUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-xs text-amber-400/80 hover:text-amber-400 truncate block"
+                    className="text-xs text-[color:var(--primary)]/80 hover:text-[color:var(--primary)] truncate block"
                   >
                     {item.websiteUrl}
                   </a>
@@ -293,7 +293,7 @@ export default function AdminClientsPage() {
                     setEditing(item);
                     setIsNew(false);
                   }}
-                  className="px-3 py-1.5 bg-amber-500 text-slate-900 text-xs font-semibold rounded-lg"
+                  className="px-3 py-1.5 bg-[color:var(--primary)] text-white text-xs font-semibold rounded-lg"
                 >
                   Edit
                 </button>

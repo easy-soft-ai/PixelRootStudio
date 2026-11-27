@@ -84,7 +84,7 @@ export default function AdminBookingsPage() {
       <div className="mb-8">
           <h1 className="text-2xl font-bold text-white">Bookings</h1>
           <p className="text-sm text-white/50 mt-1">
-            Package booking requests — {bookings.length} total • {pendingCount} pending
+            Package booking requests: {bookings.length} total, {pendingCount} pending
           </p>
       </div>
 
@@ -96,7 +96,7 @@ export default function AdminBookingsPage() {
             onClick={() => setFilter(s)}
             className={`px-4 py-1.5 rounded-lg text-xs font-semibold transition-colors ${
               filter === s
-                ? "bg-amber-500 text-slate-900"
+                ? "bg-[color:var(--primary)] text-white"
                 : "bg-white/5 border border-white/10 text-white/50 hover:text-white hover:bg-white/[0.08]"
             }`}
           >
@@ -123,7 +123,7 @@ export default function AdminBookingsPage() {
                 key={booking.id}
                 onClick={() => setSelected(booking)}
                 className={`flex items-center justify-between px-5 py-4 hover:bg-white/[0.03] cursor-pointer transition-colors ${
-                  highlightId && booking.id === parseInt(highlightId) ? "bg-amber-500/10" : ""
+                  highlightId && booking.id === parseInt(highlightId) ? "bg-[color:var(--primary)]/10" : ""
                 }`}
               >
                 <div className="flex-1 min-w-0">
@@ -138,7 +138,7 @@ export default function AdminBookingsPage() {
                       </span>
                     )}
                     {booking.invoiceNumber && (
-                      <span className="text-[9px] font-semibold text-amber-400/80 uppercase tracking-wider">
+                      <span className="text-[9px] font-semibold text-[color:var(--primary)]/80 uppercase tracking-wider">
                         {booking.invoiceNumber}
                       </span>
                     )}
@@ -180,7 +180,7 @@ export default function AdminBookingsPage() {
                 </div>
                 <div>
                   <p className="text-[10px] font-semibold uppercase tracking-wider text-white/30">Phone</p>
-                  <a href={`tel:${(selected.phone || "").replace(/\s/g, "")}`} className="text-sm text-amber-400 hover:underline mt-0.5 block">
+                  <a href={`tel:${(selected.phone || "").replace(/\s/g, "")}`} className="text-sm text-[color:var(--primary)] hover:underline mt-0.5 block">
                     {selected.phone}
                   </a>
                 </div>
@@ -230,11 +230,11 @@ export default function AdminBookingsPage() {
               )}
 
               {selected.invoiceId ? (
-                <div className="bg-amber-500/10 border border-amber-500/20 rounded-lg p-3">
-                  <p className="text-[10px] font-semibold uppercase tracking-wider text-amber-400/80">Invoice</p>
+                <div className="bg-[color:var(--primary)]/10 border border-[color:var(--primary)]/20 rounded-lg p-3">
+                  <p className="text-[10px] font-semibold uppercase tracking-wider text-[color:var(--primary)]/80">Invoice</p>
                   <Link
                     href={`/admin/invoices/${selected.invoiceId}`}
-                    className="text-sm text-amber-300 hover:underline mt-1 inline-block font-mono"
+                    className="text-sm text-[color:var(--primary)] hover:underline mt-1 inline-block font-mono"
                   >
                     {selected.invoiceNumber || `Invoice #${selected.invoiceId}`} →
                   </Link>
@@ -242,7 +242,7 @@ export default function AdminBookingsPage() {
               ) : (
                 <Link
                   href={`/admin/invoices/new?fromBooking=${selected.id}`}
-                  className="block w-full text-center px-4 py-2.5 bg-amber-500/10 border border-amber-500/25 text-amber-400 hover:bg-amber-500/20 text-sm font-semibold rounded-lg transition-colors"
+                  className="block w-full text-center px-4 py-2.5 bg-[color:var(--primary)]/10 border border-[color:var(--primary)]/25 text-[color:var(--primary)] hover:opacity-90/20 text-sm font-semibold rounded-lg transition-colors"
                 >
                   Create Invoice
                 </Link>

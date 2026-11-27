@@ -115,7 +115,7 @@ export function ImageUploader({
           onClick={() => setMode("upload")}
           className={`px-3 py-1.5 text-xs font-medium rounded-lg transition-colors ${
             mode === "upload"
-              ? "bg-amber-500 text-white"
+              ? "bg-[color:var(--primary)] text-white"
               : "bg-white/5 text-white/60 hover:bg-white/10"
           }`}
         >
@@ -126,7 +126,7 @@ export function ImageUploader({
           onClick={() => setMode("url")}
           className={`px-3 py-1.5 text-xs font-medium rounded-lg transition-colors ${
             mode === "url"
-              ? "bg-amber-500 text-white"
+              ? "bg-[color:var(--primary)] text-white"
               : "bg-white/5 text-white/60 hover:bg-white/10"
           }`}
         >
@@ -141,14 +141,14 @@ export function ImageUploader({
             value={urlInput}
             onChange={(e) => setUrlInput(e.target.value)}
             placeholder="https://example.com/image.jpg"
-            className="flex-1 px-3 py-2 bg-white/5 border border-white/10 rounded-lg text-white text-sm focus:outline-none focus:ring-2 focus:ring-amber-500/50"
+            className="flex-1 px-3 py-2 bg-white/5 border border-white/10 rounded-lg text-white text-sm focus:outline-none focus:ring-2 focus:ring-[color:var(--primary)]/50"
             onKeyDown={(e) => e.key === "Enter" && handleUrlSubmit()}
           />
           <button
             type="button"
             onClick={handleUrlSubmit}
             disabled={!urlInput.trim()}
-            className="px-4 py-2 bg-amber-500 text-white text-sm font-medium rounded-lg hover:bg-amber-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            className="px-4 py-2 bg-[color:var(--primary)] text-white text-sm font-medium rounded-lg hover:opacity-90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
           >
             Set
           </button>
@@ -167,7 +167,7 @@ export function ImageUploader({
                 relative ${aspectClasses[aspectRatio]} max-h-48 rounded-xl border-2 border-dashed 
                 flex flex-col items-center justify-center gap-3 cursor-pointer transition-colors
                 ${dragActive 
-                  ? "border-amber-500 bg-amber-500/10" 
+                  ? "border-[color:var(--primary)] bg-[color:var(--primary)]/10" 
                   : "border-white/20 bg-white/5 hover:border-white/30 hover:bg-white/10"
                 }
                 ${isUploading ? "pointer-events-none opacity-60" : ""}
@@ -175,7 +175,7 @@ export function ImageUploader({
             >
               {isUploading ? (
                 <>
-                  <div className="w-8 h-8 border-2 border-amber-500 border-t-transparent rounded-full animate-spin" />
+                  <div className="w-8 h-8 border-2 border-[color:var(--primary)] border-t-transparent rounded-full animate-spin" />
                   <span className="text-sm text-white/60">Uploading...</span>
                 </>
               ) : (
@@ -187,7 +187,7 @@ export function ImageUploader({
                   </div>
                   <div className="text-center">
                     <p className="text-sm text-white/80">
-                      <span className="text-amber-400 font-medium">Click to upload</span> or drag and drop
+                      <span className="text-[color:var(--primary)] font-medium">Click to upload</span> or drag and drop
                     </p>
                     <p className="text-xs text-white/40 mt-1">PNG, JPG, WebP up to 5MB</p>
                   </div>

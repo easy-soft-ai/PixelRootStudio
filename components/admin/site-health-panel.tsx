@@ -18,7 +18,7 @@ function ScoreRing({
   const offset = circumference - (score / 100) * circumference;
 
   const color =
-    score >= 90 ? "#34d399" : score >= 70 ? "#fbbf24" : score >= 50 ? "#fb923c" : "#f87171";
+    score >= 90 ? "#34d399" : score >= 70 ? "#4a83d8" : score >= 50 ? "#fb923c" : "#f87171";
 
   return (
     <div className="flex flex-col items-center gap-2">
@@ -66,8 +66,8 @@ function StatusIcon({ status }: { status: HealthCheck["status"] }) {
   }
   if (status === "warn") {
     return (
-      <span className="w-5 h-5 rounded-full bg-amber-400/15 flex items-center justify-center shrink-0">
-        <svg className="w-3 h-3 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+      <span className="w-5 h-5 rounded-full bg-[color:var(--primary)]/15 flex items-center justify-center shrink-0">
+        <svg className="w-3 h-3 text-[color:var(--primary)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
           <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v2m0 4h.01M12 3a9 9 0 100 18 9 9 0 000-18z" />
         </svg>
       </span>
@@ -93,7 +93,7 @@ function CheckList({ checks, title }: { checks: HealthCheck[]; title: string }) 
         <span className="text-[10px] text-white/35">
           {fails > 0 && <span className="text-red-400">{fails} fail</span>}
           {fails > 0 && warns > 0 && " · "}
-          {warns > 0 && <span className="text-amber-400">{warns} warn</span>}
+          {warns > 0 && <span className="text-[color:var(--primary)]">{warns} warn</span>}
           {fails === 0 && warns === 0 && <span className="text-green-400">All pass</span>}
         </span>
       </div>
@@ -108,7 +108,7 @@ function CheckList({ checks, title }: { checks: HealthCheck[]; title: string }) 
             {check.fixHref && check.status !== "pass" && (
               <Link
                 href={check.fixHref}
-                className="text-[10px] font-semibold text-amber-400 hover:text-amber-300 shrink-0 whitespace-nowrap"
+                className="text-[10px] font-semibold text-[color:var(--primary)] hover:text-[color:var(--primary)] shrink-0 whitespace-nowrap"
               >
                 Fix →
               </Link>
@@ -139,12 +139,12 @@ export function SiteHealthPanel({ report, compact = false }: Props) {
           <div>
             <h3 className="text-sm font-semibold text-white">Site Health</h3>
             <p className="text-[11px] text-white/40 mt-0.5">
-              SEO & performance score for landing page — {issueCount} item{issueCount !== 1 ? "s" : ""} to improve
+              SEO and performance score for the landing page. {issueCount} item{issueCount !== 1 ? "s" : ""} to improve
             </p>
           </div>
           <Link
             href="/admin/performance"
-            className="text-xs font-semibold text-amber-400 hover:text-amber-300 border border-amber-500/25 rounded-lg px-3 py-1.5 hover:bg-amber-500/10 transition-colors self-start"
+            className="text-xs font-semibold text-[color:var(--primary)] hover:text-[color:var(--primary)] border border-[color:var(--primary)]/25 rounded-lg px-3 py-1.5 hover:opacity-90/10 transition-colors self-start"
           >
             Full Report →
           </Link>
@@ -168,7 +168,7 @@ export function SiteHealthPanel({ report, compact = false }: Props) {
                   <li key={c.id} className="flex items-center justify-between gap-2 text-xs">
                     <span className="text-white/60 truncate">{c.label}</span>
                     {c.fixHref && (
-                      <Link href={c.fixHref} className="text-amber-400 hover:underline shrink-0 text-[11px]">
+                      <Link href={c.fixHref} className="text-[color:var(--primary)] hover:underline shrink-0 text-[11px]">
                         Fix
                       </Link>
                     )}
@@ -182,7 +182,7 @@ export function SiteHealthPanel({ report, compact = false }: Props) {
                     <li key={c.id} className="flex items-center justify-between gap-2 text-xs">
                       <span className="text-white/60 truncate">{c.label}</span>
                       {c.fixHref && (
-                        <Link href={c.fixHref} className="text-amber-400 hover:underline shrink-0 text-[11px]">
+                        <Link href={c.fixHref} className="text-[color:var(--primary)] hover:underline shrink-0 text-[11px]">
                           Improve
                         </Link>
                       )}
@@ -194,7 +194,7 @@ export function SiteHealthPanel({ report, compact = false }: Props) {
 
         {report.overall === 100 && (
           <p className="mt-4 text-center text-xs text-green-400 font-medium">
-            Excellent — landing page SEO & performance checks all pass
+            Excellent. Landing page SEO and performance checks all pass
           </p>
         )}
       </div>

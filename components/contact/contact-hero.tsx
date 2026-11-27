@@ -31,10 +31,10 @@ export function ContactHero() {
         </span>
         <h1 className="hero-headline text-[clamp(2rem,7vw,3.8rem)] font-bold text-white leading-[1.05] tracking-[-0.025em]">
           Let&apos;s Create<br className="sm:hidden" />{" "}
-          <em className="not-italic text-amber-400">Together</em>
+          <em className="not-italic text-[color:var(--primary)]">Together</em>
         </h1>
         <p className="mt-3 text-white/55 text-sm sm:text-base max-w-md leading-relaxed">
-          Book a session, discuss a project, or ask anything — we respond within 24 hours.
+          Book a session, discuss a project, or ask anything. We respond within 24 hours.
         </p>
       </motion.div>
     </section>

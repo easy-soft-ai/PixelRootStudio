@@ -1,23 +1,10 @@
 @import "tailwindcss";
 
-:root {
-  --bg: #f5f7fb;
-  --surface: #ffffff;
-  --text: #14181f;
-  --muted: #5b6576;
-  --border: #dfe5ef;
-  --accent: #0b3a75;
-  --primary: #0b3a75;
-  --primary-shadow: rgba(11, 58, 117, 0.5);
-  --nav-bg: rgba(255, 255, 255, 0.62);
-  --nav-border: rgba(14, 26, 45, 0.12);
-  --nav-highlight: rgba(255, 255, 255, 0.78);
-  --nav-text: rgba(16, 24, 39, 0.85);
-  --nav-active-bg: rgba(255, 255, 255, 0.92);
-  --nav-active-border: rgba(11, 58, 117, 0.18);
-}
+/* Dark utilities follow the site theme, not the operating system. */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
-html[data-theme="dark"] {
+:root {
+  color-scheme: dark;
   --bg: #0f1115;
   --surface: #171a21;
   --text: #edf1f7;

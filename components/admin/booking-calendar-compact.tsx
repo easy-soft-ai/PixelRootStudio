@@ -79,7 +79,7 @@ export function BookingCalendarCompact({ bookings }: Props) {
           </button>
           <Link
             href="/admin/booking-calendar"
-            className="ml-2 px-2.5 py-1 text-[10px] font-semibold text-amber-400 border border-amber-500/25 rounded-md hover:bg-amber-500/10"
+            className="ml-2 px-2.5 py-1 text-[10px] font-semibold text-[color:var(--primary)] border border-[color:var(--primary)]/25 rounded-md hover:opacity-90/10"
           >
             Full Calendar →
           </Link>
@@ -105,7 +105,7 @@ export function BookingCalendarCompact({ bookings }: Props) {
                   href={`/admin/booking-calendar?date=${cell.dateKey}`}
                   className={`w-7 h-7 flex flex-col items-center justify-center rounded-md text-[10px] relative transition-colors ${
                     isToday
-                      ? "bg-amber-500 text-slate-900 font-bold"
+                      ? "bg-[color:var(--primary)] text-white font-bold"
                       : cell.inMonth
                         ? "text-white/70 hover:bg-white/10"
                         : "text-white/20"
@@ -140,7 +140,7 @@ export function BookingCalendarCompact({ bookings }: Props) {
                     className="flex items-center justify-between gap-2 group"
                   >
                     <div className="min-w-0">
-                      <p className="text-xs text-white group-hover:text-amber-400 truncate transition-colors">
+                      <p className="text-xs text-white group-hover:text-[color:var(--primary)] truncate transition-colors">
                         {b.clientName}
                       </p>
                       <p className="text-[10px] text-white/35 truncate">

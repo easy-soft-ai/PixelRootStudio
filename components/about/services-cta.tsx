@@ -57,10 +57,10 @@ export function ServicesCta() {
         >
           <h2 className="hero-headline text-[2.2rem] sm:text-[3rem] lg:text-[3.8rem] font-bold text-white leading-[1.05] tracking-[-0.025em]">
             Ready to Create<br />
-            <em className="not-italic text-amber-400">Something Extraordinary?</em>
+            <em className="not-italic text-[color:var(--primary)]">Something Extraordinary?</em>
           </h2>
           <p className="mt-5 text-white/50 text-sm sm:text-base leading-relaxed max-w-md mx-auto">
-            Whether it&apos;s a once-in-a-lifetime wedding, a brand campaign, or a personal portfolio — let&apos;s build visuals that last forever.
+            A wedding, a brand campaign, or a personal portfolio. Let&apos;s make pictures that last.
           </p>
         </motion.div>
 
@@ -74,7 +74,7 @@ export function ServicesCta() {
         >
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-amber-500 text-black text-sm font-semibold tracking-wide hover:bg-amber-900 hover:text-black transition-colors duration-300"
+            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[color:var(--primary)] text-white text-sm font-semibold tracking-wide hover:opacity-90 hover:text-white transition-colors duration-300"
           >
             Book a Session
             <svg viewBox="0 0 16 16" className="w-4 h-4" fill="none" aria-hidden="true">

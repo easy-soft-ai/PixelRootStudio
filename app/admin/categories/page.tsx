@@ -72,7 +72,7 @@ export default function AdminCategoriesPage() {
             setEditing({ id: 0, name: "", slug: "", description: "", imageSrc: "", featured: true, sortOrder: 0 });
             setIsNew(true);
           }}
-          className="px-5 py-2.5 bg-amber-500 hover:bg-amber-400 text-slate-900 font-semibold rounded-lg transition-colors"
+          className="px-5 py-2.5 bg-[color:var(--primary)] hover:opacity-90 text-white font-semibold rounded-lg transition-colors"
         >
           Add Category
         </button>
@@ -142,7 +142,7 @@ export default function AdminCategoriesPage() {
               <button
                 onClick={handleSave}
                 disabled={saving}
-                className="px-4 py-2 bg-amber-500 hover:bg-amber-400 text-slate-900 font-semibold rounded-lg text-sm"
+                className="px-4 py-2 bg-[color:var(--primary)] hover:opacity-90 text-white font-semibold rounded-lg text-sm"
               >
                 {saving ? "Saving..." : "Save"}
               </button>
@@ -170,11 +170,11 @@ export default function AdminCategoriesPage() {
                 </div>
                 <div className="flex items-center gap-4">
                   {cat.featured && (
-                    <span className="text-xs bg-amber-500/20 text-amber-400 px-2 py-1 rounded">Featured</span>
+                    <span className="text-xs bg-[color:var(--primary)]/20 text-[color:var(--primary)] px-2 py-1 rounded">Featured</span>
                   )}
                   <button
                     onClick={() => { setEditing(cat); setIsNew(false); }}
-                    className="text-sm text-amber-400 hover:underline"
+                    className="text-sm text-[color:var(--primary)] hover:underline"
                   >
                     Edit
                   </button>

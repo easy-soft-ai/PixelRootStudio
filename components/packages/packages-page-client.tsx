@@ -71,10 +71,10 @@ export function PackagesPageClient({ packages, categories }: Props) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: easeOut }}
           >
-            <span className="inline-flex items-center gap-2.5 text-[10px] font-semibold tracking-[0.2em] uppercase text-amber-400/70 mb-5">
-              <span className="w-8 h-px bg-amber-400/30" />
+            <span className="inline-flex items-center gap-2.5 text-[10px] font-semibold tracking-[0.2em] uppercase text-[color:var(--primary)]/70 mb-5">
+              <span className="w-8 h-px bg-[color:var(--primary)]/30" />
               Investment
-              <span className="w-8 h-px bg-amber-400/30" />
+              <span className="w-8 h-px bg-[color:var(--primary)]/30" />
             </span>
           </motion.div>
 
@@ -106,7 +106,7 @@ export function PackagesPageClient({ packages, categories }: Props) {
               onClick={() => setActiveCategory("all")}
               className={`px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide transition-all duration-200 ${
                 activeCategory === "all"
-                  ? "bg-amber-500 text-black"
+                  ? "bg-[color:var(--primary)] text-white"
                   : "border border-[color:var(--border)] text-[color:var(--muted)] hover:text-[color:var(--text)] hover:border-[color:var(--text)]/30"
               }`}
             >
@@ -118,7 +118,7 @@ export function PackagesPageClient({ packages, categories }: Props) {
                 onClick={() => setActiveCategory(cat)}
                 className={`px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide transition-all duration-200 ${
                   activeCategory === cat
-                    ? "bg-amber-500 text-black"
+                    ? "bg-[color:var(--primary)] text-white"
                     : "border border-[color:var(--border)] text-[color:var(--muted)] hover:text-[color:var(--text)] hover:border-[color:var(--text)]/30"
                 }`}
               >
@@ -144,13 +144,13 @@ export function PackagesPageClient({ packages, categories }: Props) {
                   href={`/packages/${pkg.slug}`}
                   className={`group relative block rounded-2xl border overflow-hidden h-full ${
                     pkg.popular
-                      ? "border-amber-500/30"
+                      ? "border-[color:var(--primary)]/30"
                       : "border-[color:var(--border)]"
-                  } bg-[color:var(--surface)] hover:border-amber-500/30 transition-colors duration-300`}
+                  } bg-[color:var(--surface)] hover:border-[color:var(--primary)]/30 transition-colors duration-300`}
                 >
                   {pkg.popular && (
                     <div className="absolute top-4 right-4 z-10">
-                      <span className="inline-flex items-center gap-1.5 text-[9px] font-bold tracking-[0.15em] uppercase bg-amber-500 text-black px-2.5 py-1 rounded-full">
+                      <span className="inline-flex items-center gap-1.5 text-[9px] font-bold tracking-[0.15em] uppercase bg-[color:var(--primary)] text-white px-2.5 py-1 rounded-full">
                         Popular
                       </span>
                     </div>
@@ -175,7 +175,7 @@ export function PackagesPageClient({ packages, categories }: Props) {
                       {categoryLabels[pkg.category] || pkg.category}
                     </span>
 
-                    <h3 className="hero-headline text-xl font-bold text-[color:var(--text)] leading-tight mb-1.5 group-hover:text-amber-500 transition-colors duration-200">
+                    <h3 className="hero-headline text-xl font-bold text-[color:var(--text)] leading-tight mb-1.5 group-hover:text-[color:var(--primary)] transition-colors duration-200">
                       {pkg.name}
                     </h3>
 
@@ -219,7 +219,7 @@ export function PackagesPageClient({ packages, categories }: Props) {
                     <ul className="space-y-1.5 mb-6 flex-1">
                       {pkg.features.slice(0, 5).map((feature: string, fi: number) => (
                         <li key={fi} className="flex items-start gap-2 text-xs text-[color:var(--text)]">
-                          <span className="mt-1.5 w-1 h-1 rounded-full bg-amber-500 shrink-0" />
+                          <span className="mt-1.5 w-1 h-1 rounded-full bg-[color:var(--primary)] shrink-0" />
                           {feature}
                         </li>
                       ))}
@@ -233,8 +233,8 @@ export function PackagesPageClient({ packages, categories }: Props) {
                     {/* CTA */}
                     <div className={`flex items-center justify-center py-2.5 rounded-full text-sm font-semibold transition-all duration-200 ${
                       pkg.popular
-                        ? "bg-amber-500 text-black group-hover:bg-amber-400"
-                        : "bg-[color:var(--bg)] border border-[color:var(--border)] text-[color:var(--text)] group-hover:border-amber-500/50 group-hover:text-amber-500"
+                        ? "bg-[color:var(--primary)] text-white group-hover:brightness-110"
+                        : "bg-[color:var(--bg)] border border-[color:var(--border)] text-[color:var(--text)] group-hover:border-[color:var(--primary)]/50 group-hover:text-[color:var(--primary)]"
                     }`}>
                       Book This Package
                     </div>
@@ -269,10 +269,10 @@ export function PackagesPageClient({ packages, categories }: Props) {
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.7, ease: easeOut }}
           >
-            <span className="inline-flex items-center gap-2 text-[10px] font-semibold tracking-[0.2em] uppercase text-amber-400/70 mb-5">
-              <span className="w-8 h-px bg-amber-400/30" />
+            <span className="inline-flex items-center gap-2 text-[10px] font-semibold tracking-[0.2em] uppercase text-[color:var(--primary)]/70 mb-5">
+              <span className="w-8 h-px bg-[color:var(--primary)]/30" />
               Custom Solutions
-              <span className="w-8 h-px bg-amber-400/30" />
+              <span className="w-8 h-px bg-[color:var(--primary)]/30" />
             </span>
 
             <h2 className="hero-headline text-[clamp(1.8rem,5vw,3rem)] font-bold text-white leading-tight tracking-[-0.02em] mb-4">
@@ -284,7 +284,7 @@ export function PackagesPageClient({ packages, categories }: Props) {
 
             <Link
               href="/packages/custom-inquiry"
-              className="inline-flex items-center gap-2.5 px-7 py-3 bg-amber-500 text-black text-sm font-semibold rounded-full hover:bg-amber-400 transition-colors duration-200"
+              className="inline-flex items-center gap-2.5 px-7 py-3 bg-[color:var(--primary)] text-white text-sm font-semibold rounded-full hover:opacity-90 transition-colors duration-200"
             >
               Get Custom Quote
               <svg viewBox="0 0 16 16" className="w-4 h-4" fill="none" aria-hidden="true">

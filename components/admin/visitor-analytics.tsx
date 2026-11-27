@@ -5,7 +5,7 @@ import Link from "next/link";
 import type { AnalyticsPeriod, AnalyticsReport } from "@/lib/analytics/stats";
 
 const SOURCE_COLORS = [
-  "#fbbf24",
+  "#4a83d8",
   "#60a5fa",
   "#34d399",
   "#a78bfa",
@@ -67,11 +67,11 @@ export function VisitorAnalytics({ initialReport, compact = false }: Props) {
         <div className="flex items-center justify-between mb-4">
           <div>
             <h3 className="text-sm font-semibold text-white">Visitor Statistics</h3>
-            <p className="text-[11px] text-white/40 mt-0.5">Last 30 days — page views & traffic sources</p>
+            <p className="text-[11px] text-white/40 mt-0.5">Last 30 days: page views and traffic sources</p>
           </div>
           <Link
             href="/admin/analytics"
-            className="text-xs font-semibold text-amber-400 hover:text-amber-300 border border-amber-500/25 rounded-lg px-3 py-1.5 hover:bg-amber-500/10"
+            className="text-xs font-semibold text-[color:var(--primary)] hover:text-[color:var(--primary)] border border-[color:var(--primary)]/25 rounded-lg px-3 py-1.5 hover:opacity-90/10"
           >
             Full Analytics →
           </Link>
@@ -139,7 +139,7 @@ export function VisitorAnalytics({ initialReport, compact = false }: Props) {
               onClick={() => setPeriod(p)}
               className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors ${
                 period === p
-                  ? "bg-amber-500 text-slate-900"
+                  ? "bg-[color:var(--primary)] text-white"
                   : "bg-white/5 border border-white/10 text-white/50 hover:text-white"
               }`}
             >
@@ -169,7 +169,7 @@ export function VisitorAnalytics({ initialReport, compact = false }: Props) {
                 <div key={day.date} className="flex-1 flex flex-col items-center gap-1 min-w-0">
                   <div className="flex items-end justify-center w-full h-24 gap-px">
                     <div
-                      className="w-[45%] bg-amber-500/70 rounded-t-sm"
+                      className="w-[45%] bg-[color:var(--primary)]/70 rounded-t-sm"
                       style={{
                         height: `${(day.views / maxDaily) * 100}%`,
                         minHeight: day.views > 0 ? 3 : 0,
@@ -193,7 +193,7 @@ export function VisitorAnalytics({ initialReport, compact = false }: Props) {
             </div>
             <div className="flex gap-4 mt-3 pt-3 border-t border-white/5">
               <div className="flex items-center gap-1.5">
-                <span className="w-2.5 h-2.5 rounded-sm bg-amber-500/70" />
+                <span className="w-2.5 h-2.5 rounded-sm bg-[color:var(--primary)]/70" />
                 <span className="text-[10px] text-white/40">Page views</span>
               </div>
               <div className="flex items-center gap-1.5">
@@ -230,7 +230,7 @@ export function VisitorAnalytics({ initialReport, compact = false }: Props) {
                   </div>
                   <div className="h-1.5 bg-white/5 rounded-full overflow-hidden">
                     <div
-                      className="h-full bg-amber-500/60 rounded-full"
+                      className="h-full bg-[color:var(--primary)]/60 rounded-full"
                       style={{ width: `${(page.views / maxPages) * 100}%` }}
                     />
                   </div>

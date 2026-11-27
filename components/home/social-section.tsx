@@ -132,11 +132,11 @@ export function SocialSection({
                     className="group flex items-center gap-4 p-5 sm:p-6 hover:bg-[color:var(--bg)] transition-colors duration-300"
                     aria-label={`Follow on ${link.label}`}
                   >
-                    <div className="w-12 h-12 rounded-full bg-[color:var(--bg)] border border-[color:var(--border)] flex items-center justify-center text-[color:var(--text)] group-hover:border-amber-500/40 group-hover:text-amber-400 transition-all duration-300 shrink-0">
+                    <div className="w-12 h-12 rounded-full bg-[color:var(--bg)] border border-[color:var(--border)] flex items-center justify-center text-[color:var(--text)] group-hover:border-[color:var(--primary)]/40 group-hover:text-[color:var(--primary)] transition-all duration-300 shrink-0">
                       {Icon ? <Icon /> : null}
                     </div>
                     <div className="min-w-0 flex-1">
-                      <p className="text-sm font-semibold text-[color:var(--text)] group-hover:text-amber-400 transition-colors">
+                      <p className="text-sm font-semibold text-[color:var(--text)] group-hover:text-[color:var(--primary)] transition-colors">
                         {link.label}
                       </p>
                       {link.handle && (
@@ -145,7 +145,7 @@ export function SocialSection({
                     </div>
                     <svg
                       viewBox="0 0 12 12"
-                      className="w-3.5 h-3.5 text-[color:var(--muted)] group-hover:text-amber-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all shrink-0"
+                      className="w-3.5 h-3.5 text-[color:var(--muted)] group-hover:text-[color:var(--primary)] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all shrink-0"
                       fill="none"
                       aria-hidden="true"
                     >
@@ -170,7 +170,7 @@ export function SocialSection({
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.1em] uppercase text-amber-500 hover:text-amber-400 transition-colors"
+              className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.1em] uppercase text-[color:var(--primary)] hover:text-[color:var(--primary)] transition-colors"
             >
               Work with us
               <svg viewBox="0 0 12 12" className="w-3 h-3" fill="none" aria-hidden="true">

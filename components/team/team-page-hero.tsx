@@ -17,21 +17,21 @@ export function TeamPageHero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: easeOut }}
         >
-          <span className="inline-flex items-center gap-2 text-[10px] font-semibold tracking-[0.2em] uppercase text-amber-400/90 mb-4">
-            <span className="w-8 h-px bg-amber-400/40" />
+          <span className="inline-flex items-center gap-2 text-[10px] font-semibold tracking-[0.2em] uppercase text-[color:var(--primary)]/90 mb-4">
+            <span className="w-8 h-px bg-[color:var(--primary)]/40" />
             Our Team
-            <span className="w-8 h-px bg-amber-400/40" />
+            <span className="w-8 h-px bg-[color:var(--primary)]/40" />
           </span>
           <h1 className="hero-headline text-[clamp(2rem,5vw,3.2rem)] font-bold text-white leading-tight tracking-[-0.02em] mb-4">
             Meet the Creatives
           </h1>
           <p className="text-sm sm:text-base text-white/60 leading-relaxed max-w-xl mx-auto">
-            The passionate professionals behind PixelRoot Studio — united by craft, vision, and an uncompromising standard of quality.
+            The photographers and filmmakers behind PixelRoot Studio.
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 px-5 py-2.5 bg-amber-500 hover:bg-amber-400 text-slate-900 text-sm font-semibold rounded-full transition-colors"
+              className="inline-flex items-center gap-2 px-5 py-2.5 bg-[color:var(--primary)] hover:opacity-90 text-white text-sm font-semibold rounded-full transition-colors"
             >
               Work With Us
             </Link>

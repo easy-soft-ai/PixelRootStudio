@@ -8,7 +8,7 @@ import { prepareInvoicePrint, cleanupInvoicePrint } from "@/lib/invoices/print-f
 
 const statusPrint: Record<string, { label: string; className: string }> = {
   draft: { label: "Draft", className: "bg-slate-100 text-slate-600" },
-  sent: { label: "Due", className: "bg-amber-100 text-amber-800" },
+  sent: { label: "Due", className: "bg-[color:var(--primary)]/15 text-[color:var(--primary)]" },
   partial: { label: "Partial", className: "bg-blue-100 text-blue-800" },
   paid: { label: "Paid", className: "bg-emerald-100 text-emerald-800" },
   overdue: { label: "Overdue", className: "bg-red-100 text-red-800" },
@@ -58,7 +58,7 @@ export function InvoicePrintView({ data, siteUrl }: Props) {
         <header className="invoice-print-header invoice-header-band bg-[#0f1419] text-white px-8 sm:px-10 py-6 sm:py-8">
           <div className="flex justify-between items-start gap-4">
             <div className="min-w-0">
-              <p className="text-xs font-semibold tracking-[0.2em] uppercase text-amber-400/90 mb-2">
+              <p className="text-xs font-semibold tracking-[0.2em] uppercase text-[color:var(--primary)]/90 mb-2">
                 Photography Studio
               </p>
               <h1 className="text-2xl sm:text-3xl font-bold tracking-tight leading-tight">
@@ -72,7 +72,7 @@ export function InvoicePrintView({ data, siteUrl }: Props) {
             </div>
             <div className="text-right shrink-0">
               <p className="text-3xl sm:text-4xl font-bold tracking-tight text-white/95">INVOICE</p>
-              <p className="text-sm font-mono text-amber-400 mt-2">{data.invoiceNumber}</p>
+              <p className="text-sm font-mono text-[color:var(--primary)] mt-2">{data.invoiceNumber}</p>
               <span
                 className={`inline-block mt-2 px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider ${status.className}`}
               >
@@ -136,7 +136,7 @@ export function InvoicePrintView({ data, siteUrl }: Props) {
                 {typeof data.balanceDue === "number" && data.balanceDue > 0 && (
                   <div className="flex justify-between gap-3">
                     <dt className="text-slate-500">Balance due</dt>
-                    <dd className="font-medium text-amber-700">{formatMoney(data.balanceDue, data.currency)}</dd>
+                    <dd className="font-medium text-[color:var(--primary)]">{formatMoney(data.balanceDue, data.currency)}</dd>
                   </div>
                 )}
                 </dl>
@@ -216,7 +216,7 @@ export function InvoicePrintView({ data, siteUrl }: Props) {
                   <span className="text-xs font-semibold uppercase tracking-wider text-white/70">
                     {footerLabel}
                   </span>
-                  <span className="text-xl font-bold text-amber-400 tabular-nums">
+                  <span className="text-xl font-bold text-[color:var(--primary)] tabular-nums">
                     {formatMoney(footerAmount, data.currency)}
                   </span>
                 </div>

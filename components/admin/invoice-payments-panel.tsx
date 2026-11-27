@@ -23,7 +23,7 @@ type Props = {
 };
 
 const inputClass =
-  "w-full px-3 py-2 bg-white/5 border border-white/10 rounded-lg text-white text-sm placeholder:text-white/30 focus:outline-none focus:ring-2 focus:ring-amber-500/50";
+  "w-full px-3 py-2 bg-white/5 border border-white/10 rounded-lg text-white text-sm placeholder:text-white/30 focus:outline-none focus:ring-2 focus:ring-[color:var(--primary)]/50";
 
 const METHODS = ["Cash", "bKash", "Nagad", "Bank Transfer", "Card", "Other"];
 
@@ -131,7 +131,7 @@ export function InvoicePaymentsPanel({
           </div>
           <div className="text-right">
             <p className="text-white/40 text-xs">Balance</p>
-            <p className="font-semibold text-amber-400">{formatMoney(balanceDue, currency)}</p>
+            <p className="font-semibold text-[color:var(--primary)]">{formatMoney(balanceDue, currency)}</p>
           </div>
         </div>
       </div>
@@ -139,7 +139,7 @@ export function InvoicePaymentsPanel({
       {!invoiceId ? (
         <p className="text-sm text-white/40 py-2">Save the invoice first to record payments.</p>
       ) : balanceDue <= 0 && amountPaid > 0 ? (
-        <p className="text-sm text-emerald-400/80 py-2">Fully paid — invoice total matches payment records.</p>
+        <p className="text-sm text-emerald-400/80 py-2">Fully paid. The invoice total matches the payment records.</p>
       ) : (
         <>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-3">
@@ -160,7 +160,7 @@ export function InvoicePaymentsPanel({
                   <button
                     type="button"
                     onClick={fillBalance}
-                    className="shrink-0 px-2 py-1 text-[10px] text-amber-400 border border-amber-500/30 rounded-lg hover:bg-amber-500/10"
+                    className="shrink-0 px-2 py-1 text-[10px] text-[color:var(--primary)] border border-[color:var(--primary)]/30 rounded-lg hover:opacity-90/10"
                   >
                     Full
                   </button>

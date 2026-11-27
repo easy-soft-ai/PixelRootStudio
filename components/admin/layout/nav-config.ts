@@ -148,6 +148,12 @@ export const adminNavGroups: NavGroup[] = [
         description: "Logo, favicon, SEO, social meta",
       },
       {
+        href: "/admin/tags",
+        label: "SEO & Tags",
+        icon: "tags",
+        description: "Analytics, Search Console, ads pixels",
+      },
+      {
         href: "/admin/backup",
         label: "Backup & Restore",
         icon: "backup",

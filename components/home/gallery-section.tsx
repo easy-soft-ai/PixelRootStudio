@@ -113,7 +113,7 @@ export function GallerySection({ galleryData }: { galleryData: any[] }) {
                   {/* Category pill */}
                   <div className="absolute bottom-3 left-3 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
                     <span className="inline-flex items-center gap-1.5 text-[10px] font-semibold tracking-[0.14em] uppercase text-white bg-black/55 backdrop-blur-sm border border-white/15 rounded-full px-3 py-1">
-                      <span className="w-1 h-1 rounded-full bg-amber-400 shrink-0" />
+                      <span className="w-1 h-1 rounded-full bg-[color:var(--primary)] shrink-0" />
                       {g.category}
                     </span>
                   </div>
@@ -224,7 +224,7 @@ export function GallerySection({ galleryData }: { galleryData: any[] }) {
               {/* Caption bar */}
               <div className="mt-4 flex items-center gap-3 flex-wrap justify-center">
                 <span className="inline-flex items-center gap-1.5 text-[10px] font-semibold tracking-[0.16em] uppercase text-white/50 border border-white/12 rounded-full px-3 py-1">
-                  <span className="w-1 h-1 rounded-full bg-amber-400 shrink-0" />
+                  <span className="w-1 h-1 rounded-full bg-[color:var(--primary)] shrink-0" />
                   {item.category}
                 </span>
                 <span className="text-[13px] text-white/35 text-center leading-snug max-w-sm">

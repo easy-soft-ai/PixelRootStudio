@@ -59,7 +59,7 @@ export default function EditProjectPage({ params }: { params: Promise<{ id: stri
     return (
       <div className="text-center py-16">
         <p className="text-white/50 mb-4">Project not found</p>
-        <Link href="/admin/projects" className="text-amber-400 hover:text-amber-300 text-sm">
+        <Link href="/admin/projects" className="text-[color:var(--primary)] hover:text-[color:var(--primary)] text-sm">
           ← Back to Projects
         </Link>
       </div>

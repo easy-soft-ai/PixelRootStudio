@@ -63,7 +63,7 @@ export default function AdminLoginPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-amber-500/50 focus:border-amber-500/50 transition-all"
+                className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-[color:var(--primary)]/50 focus:border-[color:var(--primary)]/50 transition-all"
                 placeholder="admin@pixelroot.studio"
               />
             </div>
@@ -77,7 +77,7 @@ export default function AdminLoginPage() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
-                className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-amber-500/50 focus:border-amber-500/50 transition-all"
+                className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-[color:var(--primary)]/50 focus:border-[color:var(--primary)]/50 transition-all"
                 placeholder="••••••••"
               />
             </div>
@@ -85,7 +85,7 @@ export default function AdminLoginPage() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-3 bg-amber-500 hover:bg-amber-400 disabled:bg-amber-500/50 text-slate-900 font-semibold rounded-lg transition-colors duration-200"
+              className="w-full py-3 bg-[color:var(--primary)] hover:opacity-90 disabled:bg-[color:var(--primary)]/50 text-white font-semibold rounded-lg transition-colors duration-200"
             >
               {loading ? "Signing in..." : "Sign In"}
             </button>

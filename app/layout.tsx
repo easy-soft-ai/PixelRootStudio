@@ -1,11 +1,11 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
-import Script from "next/script";
 import "./globals.css";
 import { AppShell } from "@/components/app-shell";
 import { ChromeGate } from "@/components/chrome-gate";
-import { DynamicFavicon } from "@/components/dynamic-favicon";
 import { SiteFooter } from "@/components/site-footer";
+import { MarketingScripts } from "@/components/marketing/marketing-scripts";
+import { getPublicMarketingTags } from "@/lib/marketing/tags";
 import { getSiteSeo } from "@/seo/site-seo";
 
 const inter = Inter({
@@ -22,8 +22,20 @@ const playfair = Playfair_Display({
 
 export const revalidate = 3600;
 
+export const viewport: Viewport = {
+  colorScheme: "dark",
+  themeColor: "#0f1115",
+};
+
+function iconHref(favicon?: string) {
+  if (!favicon) return undefined;
+  return favicon.startsWith("http") ? favicon : `/api/favicon?v=${encodeURIComponent(favicon)}`;
+}
+
 export async function generateMetadata(): Promise<Metadata> {
   const siteSeo = getSiteSeo();
+  const marketingTags = getPublicMarketingTags();
+  const href = iconHref(siteSeo.favicon);
   const ogImages = siteSeo.ogImage
     ? [{ url: siteSeo.ogImage, width: 1200, height: 630, alt: siteSeo.siteName }]
     : undefined;
@@ -34,9 +46,16 @@ export async function generateMetadata(): Promise<Metadata> {
     description: siteSeo.description,
     keywords: siteSeo.keywords,
     applicationName: siteSeo.siteName,
-    alternates: {
-      canonical: "/",
-    },
+    icons: href
+      ? {
+          icon: [{ url: href, type: "image/png" }],
+          shortcut: href,
+          apple: href,
+        }
+      : undefined,
+    verification: marketingTags.googleSiteVerification
+      ? { google: marketingTags.googleSiteVerification }
+      : undefined,
     robots: {
       index: true,
       follow: true,
@@ -74,25 +93,20 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const marketingTags = getPublicMarketingTags();
+
   return (
     <html
       lang="en"
-      suppressHydrationWarning
+      data-theme="dark"
       className={`${inter.variable} ${playfair.variable}`}
     >
       <head>
-        <DynamicFavicon />
         <link rel="preconnect" href="https://images.unsplash.com" />
         <link rel="dns-prefetch" href="https://images.unsplash.com" />
       </head>
       <body>
-        <Script
-          id="theme-initializer"
-          strategy="beforeInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `(function(){try{var t=localStorage.getItem("theme");var p=window.matchMedia("(prefers-color-scheme: dark)").matches;var n=(t==="light"||t==="dark")?t:(p?"dark":"light");document.documentElement.setAttribute("data-theme",n);}catch(e){}})();`,
-          }}
-        />
+        <MarketingScripts tags={marketingTags} />
         <AppShell>
           <main className="site-main">{children}</main>
           <ChromeGate>

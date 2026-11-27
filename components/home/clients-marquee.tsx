@@ -77,7 +77,7 @@ export function ClientsMarquee({ title, subtitle, clients }: Props) {
           viewport={{ once: true, margin: "-40px" }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         >
-          <span className="block text-[11px] font-semibold tracking-[0.2em] uppercase text-amber-400/80 mb-2">
+          <span className="block text-[11px] font-semibold tracking-[0.2em] uppercase text-[color:var(--primary)]/80 mb-2">
             Our Clients
           </span>
           <h2 className="hero-headline text-[1.6rem] sm:text-[2rem] font-bold text-white leading-tight tracking-[-0.02em]">

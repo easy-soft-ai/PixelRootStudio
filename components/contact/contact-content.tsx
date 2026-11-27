@@ -81,7 +81,7 @@ export function ContactContent({ contact }: { contact: ContactInfo }) {
               Reach Out Directly
             </h2>
             <p className="text-sm text-[color:var(--muted)] leading-relaxed mb-8 max-w-md">
-              Prefer a quick call or email? Use any of the channels below — we&apos;re happy to discuss your vision before you book.
+              Prefer a quick call or email? Use any of the channels below. We can talk through the job before you book.
             </p>
 
             <div className="flex flex-col gap-4">
@@ -171,7 +171,7 @@ export function ContactContent({ contact }: { contact: ContactInfo }) {
               ) : (
                 <form onSubmit={handleSubmit} className="flex flex-col gap-4">
                   {error && (
-                    <div className="rounded-xl border border-red-500/25 bg-red-500/5 p-3 text-xs text-red-600 dark:text-red-400">
+                    <div className="rounded-xl border border-red-500/25 bg-red-500/5 p-3 text-xs text-red-400">
                       {error}
                     </div>
                   )}
